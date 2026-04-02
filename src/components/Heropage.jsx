@@ -1,13 +1,13 @@
 import React from "react";
-
+import signaturePlaceholder from "../assets/signaturePlaceholder.png";
 
 export default function HeroPage({ navigate }) {
   return (
     <div className="hero-page">
 
-    <div class = "hero-signature">
-        <img src= "src\assets\signaturePlaceholder.png"/>
-    </div>
+    <div className="hero-signature">
+        <img src={signaturePlaceholder} alt="signature" />
+      </div>
 
     <div className="hero-top">
         <h1> ALEXA</h1>

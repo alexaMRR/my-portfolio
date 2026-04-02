@@ -1,4 +1,6 @@
 import React from "react";
+import signature from "./assets/signaturePlaceholder.png"
+
 
 export default function HeroPage({ navigate }) {
   return (

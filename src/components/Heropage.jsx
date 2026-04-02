@@ -7,7 +7,7 @@ export default function HeroPage({ navigate }) {
     <div className="hero-page">
 
     <div class = "hero-signature">
-        <img src= "src\assets\signaturePlaceholder.png"/>
+        <img src= "src/components/signaturePlaceholder.png"/>
     </div>
 
     <div className="hero-top">

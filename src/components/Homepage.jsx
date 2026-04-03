@@ -1,183 +1,140 @@
-// src/components/HomePage.jsx
-// ─────────────────────────────────────────────
-// HOME PAGE — main portfolio layout
-// Matches the design: sticky top navbar,
-// left sidebar nav, right content area
-// ─────────────────────────────────────────────
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import signaturePlaceholder from "../assets/signaturePlaceholder[DARK].png";
 
-// ── Sidebar nav sections ──────────────────────
-// TODO: Add or remove sections as needed
+import Navbar from "./Navbar.jsx";
+
+
 const SIDEBAR_SECTIONS = [
-  "Hello World!",
-  "Meet Alexa",
-  "Timeline",
-  "My Journey",
-  "Contact Me",
+    "Hello World!",
+    "Meet Alexa",
+    "Timeline",
+    "My Journey",
+    "Contact Me",
 ];
 
 // ── Top navbar links ──────────────────────────
 const TOP_NAV_LINKS = ["Home", "Resume", "Projects", "What's New"];
 
-export default function HomePage({ navigate }) {
-  const [activeSection, setActiveSection] = useState("Hello World!");
+export default function HomePage() {
+    const [activeSection, setActiveSection] = useState(SIDEBAR_SECTIONS[0]);
+    const [activeLink, setActiveLink] = useState("Home");
+    const navigate = useNavigate();
+    useEffect(() => {
+  alert(" April 3rd, 2026: Welcome! I'm in the process of migrating my website's design and structure, so it might be a little unfinished. Thank you for your patience!");}, []); 
+    return (
+        <div className="home-page">
+            <Navbar navigate={navigate} />
+            <div className="home-body">
 
-  return (
-    <div className="home-page">
+                {/* ── Left Sidebar ── */}
+                <aside className="sidebar">
+                    {SIDEBAR_SECTIONS.map((section) => (
+                        <button
+                            key={section}
+                            className={`sidebar-link ${activeSection === section ? "active" : ""}`}
+                            onClick={() => setActiveSection(section)}
+                        >
+                            {section}
+                        </button>
+                    ))}
+                </aside>
 
-      {/* ════════════════════════════════════════
-          TOP NAVBAR
-      ════════════════════════════════════════ */}
-      <header className="top-navbar">
+                {/* ── Main Content ── */}
+                <main className="home-content">
+                    {activeSection === "Hello World!" && <SectionHelloWorld />}
+                    {activeSection === "Meet Alexa" && <SectionMeetAlexa />}
+                    {activeSection === "Timeline" && <SectionTimeline />}
+                    {activeSection === "My Journey" && <SectionMyJourney />}
+                    {activeSection === "Contact Me" && <SectionContact />}
+                </main>
 
-        {/* Logo / name lockup */}
-        <div className="navbar-logo" onClick={() => navigate("hero")} role="button" tabIndex={0}>
-          {/* TODO: Update with your name */}
-          <span className="logo-name">ALEXA<br />RODRIGUEZ</span>
-          <span className="logo-tagline">Design. Perfect.<br />Code. Ship.</span>
+            </div>
         </div>
-
-        {/* Main nav links */}
-        <nav className="navbar-links" aria-label="Main navigation">
-          {TOP_NAV_LINKS.map((link) => (
-            <a key={link} href={`#${link.toLowerCase().replace(/\s/g, "-")}`} className="navbar-link">
-              {link}
-            </a>
-          ))}
-        </nav>
-
-        {/* Action icons: download resume, LinkedIn, share */}
-        <div className="navbar-actions">
-          {/* TODO: Replace href with your actual resume PDF path */}
-          <a href="/assets/resume.pdf" download className="nav-icon-btn" title="Download Resume">⬇</a>
-          {/* TODO: Replace with your actual LinkedIn URL */}
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="nav-icon-btn" title="LinkedIn">in</a>
-          <button className="nav-icon-btn" title="Share">⇧</button>
-        </div>
-
-      </header>
-
-      {/* ════════════════════════════════════════
-          BODY: sidebar + content
-      ════════════════════════════════════════ */}
-      <div className="home-body">
-
-        {/* ── Left Sidebar ── */}
-        <aside className="sidebar">
-          {SIDEBAR_SECTIONS.map((section) => (
-            <button
-              key={section}
-              className={`sidebar-link ${activeSection === section ? "active" : ""}`}
-              onClick={() => setActiveSection(section)}
-            >
-              {section}
-            </button>
-          ))}
-        </aside>
-
-        {/* ── Main Content ── */}
-        <main className="home-content">
-          {activeSection === "Hello World!" && <SectionHelloWorld />}
-          {activeSection === "Meet Alexa"   && <SectionMeetAlexa />}
-          {activeSection === "Timeline"     && <SectionTimeline />}
-          {activeSection === "My Journey"   && <SectionMyJourney />}
-          {activeSection === "Contact Me"   && <SectionContact />}
-        </main>
-
-      </div>
-    </div>
-  );
+    );
 }
 
-// ══════════════════════════════════════════════
-// CONTENT SECTIONS — fill these in!
-// ══════════════════════════════════════════════
 
 function SectionHelloWorld() {
-  return (
-    <section className="content-section">
-      <h2 className="content-heading">HELLO WORLD!</h2>
+    return (
+        <section className="content-section">
+            <h2 className="content-heading">HELLO WORLD!</h2>
 
-      {/* TODO: Replace with your actual intro paragraph.
-               Wrap any highlighted words in <strong> or <a> tags. */}
-      <p className="content-body">
-        Welcome and thank you for visiting my website! My name is{" "}
-        <strong>Alexa Rodriguez</strong>. I'm a designer and developer that
-        works on UX/UI and front-end programming. I attend the{" "}
-        <strong>University of California, Berkeley</strong>, where I'm pursuing
-        a major in <strong>Cognitive Science</strong>. I'm a multifaceted
-        developer with a passion for human-centric design and a frictionless
-        digital experience, whether I'm sketching design foundations with paper
-        and pencil, or implementing front-end components. I've got experience
-        with Python, React.js, HTML/CSS, SQL, Adobe Suite, Figma, and Copilot.
-        You can see the rest of my qualifications on my resume within this
-        portfolio I've built for you. Feel free to contact me — I'm always open
-        to chatting and collaborating.
-      </p>
+            <p className="intro-card">
+                Welcome and thank you for visiting my website!
 
-      {/* TODO: Replace with your actual signature image:
-               <img src="/assets/signature.png" alt="Alexa's signature" className="content-signature" /> */}
-      <p className="content-signoff">Cheers,<br /><em>ALEXA</em></p>
+                <br></br>
+                <br></br>
 
-      {/* CTA buttons */}
-      <div className="content-cta">
-        {/* TODO: Update hrefs to point to your resume, email, and projects */}
-        <a href="/assets/resume.pdf" download className="cta-btn cta-outline">VIEW RESUME</a>
-        <a href="mailto:you@email.com" className="cta-btn cta-outline">SEND EMAIL</a>
-        <a href="#projects" className="cta-btn cta-outline">RECENT WORK</a>
-        {/* TODO: Update this last button text/link */}
-        <a href="#" className="cta-btn cta-accent">HEY GOOGLE, WHO ILLUSTRATED "BONBON" &amp; THE UNITED WOMEN?</a>
-      </div>
-    </section>
-  );
+                My name is <b>Alexa Rodriguez</b>. I attend the <b>University of California, Berkeley</b>, where I'm pursuing a major in <b> Cognitive Science </b>. I'm a programmer, developer, and designer. I compose ideas and wireframes, perfect assets and designs, code the components, and ship the final product– I can do it all.
+                <br></br>
+                <br></br>
+                I'm also a locally published book illustrator and co-author, an elementary-age coding teacher, an artist with an appreciation for beautiful things, and an avid modded Minecraft player (<i>troubleshooting independent mod installation and performance should be its own technical Java skill</i>).
+
+                I approach my work like it's art, and I approach my problems creatively and bursting with ideas. I have a passion for breathing life into digital experiences, and hate a messy, buggy interface. I've got experience with <b>Python, React.js, HTML/CSS, SQL, Adobe Suite, Figma, and Copilot </b>. You can see the rest of my qualifications on my resume.
+                <br></br>
+                <br></br>
+                I hope you enjoy your stay in my little piece of internet. Shoot me an email or a message on LinkedIn, I’m always happy to strengthen my network and learn from others!
+
+
+                <div className="content-signoff">
+                    <span>Cheers,<br /><em>ALEXA</em></span>
+                    <img src={signaturePlaceholder} alt="signature" className="content-signature" />
+                </div>
+
+            </p>
+
+            <div className="action-bar">
+                <a href="src/assets/ALEXA-RODRIGUEZ-RESUME.pdf" download className="action-btn">VIEW RESUME</a>
+                <a href="mailto:alexarodriguez1273@gmail.com" className="action-btn">alexarodriguez1273@gmail.com</a>
+                <a href="/my-work" className="action-btn">RECENT WORK</a>
+                <a href="https://www.google.com/search?q=who+illustrated+bonbon+and+the+united+women+&num=10&sca_esv=f4adb27807e92ea2&sxsrf=ANbL-n6IZPvxqxTjFZPNzZ_-tBesiK9BcQ%3A1775213433710&ei=eZvPaZqGK7fRkPIPif6uwQ8&biw=1422&bih=621&ved=0ahUKEwjapvewwdGTAxW3KEQIHQm_K_gQ4dUDCBE&uact=5&oq=who+illustrated+bonbon+and+the+united+women+&gs_lp=Egxnd3Mtd2l6LXNlcnAiLHdobyBpbGx1c3RyYXRlZCBib25ib24gYW5kIHRoZSB1bml0ZWQgd29tZW4gMgQQIxgnSNAGUNUEWNUEcAF4AJABAJgBfqABfqoBAzAuMbgBA8gBAPgBAZgCAqACjAHCAggQABjvBRiwA8ICCxAAGIkFGKIEGLADmAMAiAYBkAYEkgcDMS4xoAeCArIHAzAuMbgHgwHCBwUwLjEuMcgHCYAIAQ&sclient=gws-wiz-serp" className="action-btn ">HEY GOOGLE, WHO ILLUSTRATED "BONBON" AND THE UNITED WOMEN?</a>
+            </div>
+
+            <div className="fullGradientLink">
+                <a href="https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/" > UC BERKELEY NEWS: UC Berkeley students combat K-12 book bans by creating their own children’s books</a>
+            </div>
+
+        </section>
+    );
 }
 
 function SectionMeetAlexa() {
-  return (
-    <section className="content-section">
-      <h2 className="content-heading">MEET ALEXA</h2>
-      {/* TODO: Add your bio, photo, fun facts, etc. */}
-      <p className="content-body content-placeholder">
-        ✏️ Add your bio here — who you are, what drives you, what you love outside of work.
-      </p>
-    </section>
-  );
+    return (
+        <section className="content-section">
+            <h2 className="content-heading">MEET ALEXA</h2>
+            <p className="content-body">
+        This area is under construction! Check back in a day or two, or reach out! </p>
+        </section>
+    );
 }
 
 function SectionTimeline() {
-  return (
-    <section className="content-section">
-      <h2 className="content-heading">TIMELINE</h2>
-      {/* TODO: Add a timeline of your education and experience */}
-      <p className="content-body content-placeholder">
-        ✏️ Add your timeline here — education, internships, jobs, key milestones.
-      </p>
-    </section>
-  );
+    return (
+        <section className="content-section">
+            <h2 className="content-heading">TIMELINE</h2>
+            <p className="content-body">
+        This area is under construction! Check back in a day or two, or reach out! </p>
+        </section>
+    );
 }
 
 function SectionMyJourney() {
-  return (
-    <section className="content-section">
-      <h2 className="content-heading">MY JOURNEY</h2>
-      {/* TODO: Add subsections: Before College, Undergrad at Berkeley, What's Next? */}
-      <ul className="journey-list">
-        <li><strong>Before College</strong> — ✏️ Add your story here</li>
-        <li><strong>Undergrad at Berkeley</strong> — ✏️ Add your story here</li>
-        <li><strong>What's Next?</strong> — ✏️ Add your story here</li>
-      </ul>
-    </section>
-  );
+    return (
+        <section className="content-section">
+            <h2 className="content-heading">MY JOURNEY</h2>
+            <p className="content-body">
+        This area is under construction! Check back in a day or two, or reach out!</p>
+        </section>
+    );
 }
 
 function SectionContact() {
-  return (
-    <section className="content-section">
-      <h2 className="content-heading">CONTACT ME</h2>
-      {/* TODO: Add contact form or links */}
-      <p className="content-body content-placeholder">
-        ✏️ Add contact info, a form, or links to email / LinkedIn / GitHub.
-      </p>
-    </section>
-  );
+    return (
+        <section className="content-section">
+            <h2 className="content-heading">CONTACT ME</h2>
+            <p className="content-body">
+        This area is under construction! Check out the icons on the top right corner for contact information. </p>
+        </section>
+    );
 }

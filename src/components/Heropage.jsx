@@ -1,7 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import signaturePlaceholder from "../assets/signaturePlaceholder.png";
 
-export default function HeroPage({ navigate }) {
+
+export default function HeroPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="hero-page">
 
@@ -27,14 +32,14 @@ export default function HeroPage({ navigate }) {
                     <span className="darkblue"> UNIVERSITY OF CALIFORNIA, BERKELEY </span> 
                 </span> 
           
-          <span className="lightPurple">SOFTWARE ENGINEERING
-                <span className="darkTan"> <b> + </b> </span> UX / UI <span className="darkTan"> <b> + </b> </span> DESIGN</span>
+          <span className="lightPurple"> FRONT-END DEVELOPMENT
+                <span className="darkTan"> <b> + </b> </span> UX ENGINEERING <span className="darkTan"> <b> + </b> </span> UI DESIGN</span>
           </div>
    
 
         <button
           className="hero-button"
-          onClick={() => navigate("home")}
+          onClick={() => navigate("/home")}
         >
           Welcome In <span className="who-arrow">↓</span>
         </button>

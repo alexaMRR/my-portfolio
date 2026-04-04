@@ -4,10 +4,8 @@ import Navbar from "./Navbar.jsx";
 
 const SIDEBAR_SECTIONS = [
   "Introduction and Guide",
-  "UX / UI Design",
-  "Coding and Development",
-  "Data Science Projects",
-  "Other Projects",
+  "Experience Samples",
+  "Academic Projects",
 ];
 
 const TOP_NAV_LINKS = ["Home", "Resume", "Projects", "What's New"];
@@ -38,10 +36,8 @@ export default function MyWorkPage() {
         {/* ── Main Content ── */}
         <main className="home-content">
             {activeSection === "Introduction and Guide" && <SectionIntroAndGuide />}
-            {activeSection === "UX / UI Design" && <SectionUXUI />}
-            {activeSection === "Coding and Development" && <SectionCoding />}
-            {activeSection === "Data Science Projects" && <SectionDataScience />}
-            {activeSection === "Other Projects" && <SectionOther />}
+            {activeSection === "Experience Samples" && <SectionXPSamples />}
+            {activeSection === "Academic Projects" && <SectionAcademicProjects />}
         </main>
 
       </div>
@@ -53,49 +49,78 @@ export default function MyWorkPage() {
 function SectionIntroAndGuide() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">INTRODUCTION AND GUIDE</h2>
-<p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
+      <h2 className="content-heading">Introduction and Guide</h2>
+      <div className = "content-container">
+      <div className="content-body">
+        <p> This section is still under construction-- please excuse the rough edges! </p>
+        </div>
+        </div>
     </section>
   );
 }
 
-function SectionUXUI() {
+function SectionXPSamples() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">UX / UI DESIGN</h2>
-      <p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
+      <h2 className="content-heading">Introduction and Guide</h2>
+      <div className = "content-container">
+      <div className="content-body">
+        <p> This section is still under construction-- please excuse the rough edges! </p>
+        </div>
+        </div>
     </section>
   );
 }
 
-function SectionCoding() {
-  return (
-    <section className="content-section">
-      <h2 className="content-heading">CODING AND DEVELOPMENT</h2>
-      <p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
-    </section>
-  );
-}
 
-function SectionDataScience() {
+function SectionAcademicProjects() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">DATA SCIENCE PROJECTS</h2>
-      <p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
-    </section>
-  );
-}
+        <div className = "content-container">
+      <h2 className="content-heading">ACADEMIC PROJECTS</h2>
+      
+      <div className="content-body">
+        <p> This section is still under construction-- please excuse the rough edges! </p>
+        </div>
+        </div>
+        <div className = "content-container">
+      <h4 className="content-heading">Bonbon! And the United Women</h4>
+      
+      <div className="content-body">
+        <div className="content-summary"><p> During the Fall of 2025, I had the pleasure of taking CHICANO 50 - Introduction to Chicano Studies. Our final project was an effort to combat the banning of books in K-12 education, a practice that was targeted largely at ethnic studies topics. We collaborated in small groups to produce short stories based on a specific event or female historical figure we had learned about that semester. Our project was based on the women mutualistas of the 1930s– networks of women in Mexican-American barrios that created an underlying safety net for their communities during the Great Depression. 
+</p></div>
+<div className= "Content-Detail-Container">
+    <div className= "content-detail">
+        Highlights:
+        - 30+ Pages
+        - 20+ illustrations
+        - Bilingual (Spanish/English)
+        - “Best Illustration” out of 10+ projects
+        - “Best Overall” out of 10+ projects
+        - Locally published with Eastwind Books of Berkeley 
+        - Sub-72 hour turnaround
+    </div>
+    <div className= "content-detail">
+        My Role:
+            - Lead Illustrator and Designer
+            - Storyboarding
+            - Product Branding
+            - Wireframing and Prototyping
 
-function SectionOther() {
-  return (
-    <section className="content-section">
-      <h2 className="content-heading">CONTACT ME</h2>
-      <p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
+    </div>
+    <div className= "content-detail">
+        Tools Used: 
+            - Adobe Illustrator
+            - Adobe InDesign
+            - Procreate
+
+    </div>
+</div>
+<div className="content-summary"><p> Synopsis: 
+”Bonbon! And the United Women” follows a chihuahua dog named Bonbon as he witnesses the effects of the 1930s Great Depression in his neighborhood. At this time, the Mexican-American community was being targeted through the Mexican Repatriation Act of the 1930s. This act would call for the deportation of Mexican and Mexican-Americans to Mexico. It tore apart families, expulsed American-born Mexicans, and drastically changed the lives of over a million people. Bonbon walks through his barrio, and witnesses Mexican women build support systems, aid each other’s families, work for an income, and fight for the survival of the Mexican-American community. 
+</p></div>
+        </div>
+        </div>
     </section>
   );
 }

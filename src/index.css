@@ -385,8 +385,31 @@ a.nav-icon-btn {
   padding: 0.5rem;
   border-radius: 5px;
   background-color: var(--medTan);
+  border: 3px solid plum;
+  
+}
+.content-container {
+  border: 3px solid lawngreen;
 }
 
+.content-container h2 {
+  color: blue;
+  font-family: var(--font-body);
+}
+.content-container h4 {
+  color: orange;
+  font-size: 2rem;
+  font-family: var(--font-body);
+}
+
+.Content-Detail-Container {
+  border: 3px solid cyan;
+  display: flex;
+  flex-direction: row;
+}
+.content-detail {
+  border: 3px solid magenta;
+}
 .content-body strong { color: var(--burgundy); font-weight: 600; }
 .content-body a      { color: var(--burgundy); text-decoration: underline; }
 

@@ -130,33 +130,33 @@ function SectionAcademicProjects() {
 
 <div className="gallery">
   <div className="gallery-item">
-     <a href="src\assets\bonbon\book-sather-tower.jpg"  target="_blank" rel="noreferrer">
-    <img src="src\assets\bonbon\book-sather-tower.jpg" alt="description" /> </a>
+     <a href="src/assets/bonbon/book-sather-tower.jpg"  target="_blank" rel="noreferrer">
+    <img src="src/assets/bonbon/book-sather-tower.jpg" alt="description" /> </a>
     <p className="gallery-caption">Printed copy in front of Sather Tower</p>
   </div>
   <div className="gallery-item">
-    <a href="src\assets\bonbon\books-ethnic-studies-lib.jpg"  target="_blank" rel="noreferrer">
-    <img src="src\assets\bonbon\books-ethnic-studies-lib.jpg" ttarget="_blank" rel="noreferrer"alt="description" /> </a>
+    <a href="src/assets/bonbon/books-ethnic-studies-lib.jpg"  target="_blank" rel="noreferrer">
+    <img src="src/assets/bonbon/books-ethnic-studies-lib.jpg" ttarget="_blank" rel="noreferrer"alt="description" /> </a>
     <p className="gallery-caption">Two physical copies in the UC Berkeley Ethnic Studies Library</p>
   </div>
   <div className="gallery-item">
-    <a href="src\assets\bonbon\luigi-pages-photograph.jpg"  target="_blank" rel="noreferrer">
-    <img src="src\assets\bonbon\luigi-pages-photograph.jpg" target="_blank" rel="noreferrer" alt="description" /></a>
+    <a href="src/assets/bonbon/luigi-pages-photograph.jpg"  target="_blank" rel="noreferrer">
+    <img src="src/assets/bonbon/luigi-pages-photograph.jpg" target="_blank" rel="noreferrer" alt="description" /></a>
     <p className="gallery-caption">Book expo setup along with a picture of Luigi (my muse!)</p> 
   </div>
   <div className="gallery-item">
-    <a href="src\assets\bonbon\bonbon-Character-Sketching.png"  target="_blank" rel="noreferrer">
-    <img src="src\assets\bonbon\bonbon-Character-Sketching.png" target="_blank" rel="noreferrer" alt="description" /> </a>
+    <a href="src/assets/bonbon/bonbon-Character-Sketching.png"  target="_blank" rel="noreferrer">
+    <img src="src/assets/bonbon/bonbon-Character-Sketching.png" target="_blank" rel="noreferrer" alt="description" /> </a>
     <p className="gallery-caption">Brainstorming character design and artstyle</p>
   </div>
   <div className="gallery-item">
-    <a href="src\assets\bonbon\bonbon-p1-sketch.png"  target="_blank" rel="noreferrer">
-    <img src="src\assets\bonbon\bonbon-p1-sketch.png" target="_blank" rel="noreferrer" alt="description" /> </a>
+    <a href="src/assets/bonbon/bonbon-p1-sketch.png"  target="_blank" rel="noreferrer">
+    <img src="src/assets/bonbon/bonbon-p1-sketch.png" target="_blank" rel="noreferrer" alt="description" /> </a>
     <p className="gallery-caption">Opening page sketch </p>
   </div>
   <div className="gallery-item">
-    <a href="src\assets\bonbon\full-spread-illustration-photograph.jpg"  target="_blank" rel="noreferrer">
-    <img src="src\assets\bonbon\full-spread-illustration-photograph.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
+    <a href="src/assets/bonbon/full-spread-illustration-photograph.jpg"  target="_blank" rel="noreferrer">
+    <img src="src/assets/bonbon/full-spread-illustration-photograph.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
     <p className="gallery-caption">Full-spread illustration across two pages in physical copy</p>
   </div>
 </div>

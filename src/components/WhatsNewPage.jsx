@@ -48,7 +48,7 @@ export default function HomePage() {
 function SectionWhatsNew() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">WHAT'S NEW</h2>
+      <h2 className="section-heading">WHAT'S NEW</h2>
 <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>
@@ -58,7 +58,7 @@ function SectionWhatsNew() {
 function SectionLatest() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">LATEST</h2>
+      <h2 className="section-heading">LATEST</h2>
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>

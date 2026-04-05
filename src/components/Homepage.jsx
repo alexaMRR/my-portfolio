@@ -58,7 +58,7 @@ export default function HomePage() {
 function SectionHelloWorld() {
     return (
         <section className="content-section">
-            <h2 className="content-heading">HELLO WORLD!</h2>
+            <h2 className="section-heading">HELLO WORLD!</h2>
 
             <p className="intro-card">
                 Welcome and thank you for visiting my website!
@@ -102,7 +102,7 @@ function SectionHelloWorld() {
 function SectionMeetAlexa() {
     return (
         <section className="content-section">
-            <h2 className="content-heading">MEET ALEXA</h2>
+            <h2 className="section-heading">MEET ALEXA</h2>
             <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
         </section>
@@ -112,7 +112,7 @@ function SectionMeetAlexa() {
 function SectionTimeline() {
     return (
         <section className="content-section">
-            <h2 className="content-heading">TIMELINE</h2>
+            <h2 className="section-heading">TIMELINE</h2>
             <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
         </section>
@@ -122,7 +122,7 @@ function SectionTimeline() {
 function SectionMyJourney() {
     return (
         <section className="content-section">
-            <h2 className="content-heading">MY JOURNEY</h2>
+            <h2 className="section-heading">MY JOURNEY</h2>
             <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out!</p>
         </section>
@@ -132,7 +132,7 @@ function SectionMyJourney() {
 function SectionContact() {
     return (
         <section className="content-section">
-            <h2 className="content-heading">CONTACT ME</h2>
+            <h2 className="section-heading">CONTACT ME</h2>
             <p className="content-body">
         This area is under construction! Check out the icons on the top right corner for contact information. </p>
         </section>

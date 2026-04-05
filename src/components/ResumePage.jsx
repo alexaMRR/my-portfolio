@@ -53,7 +53,7 @@ export default function MyWorkPage() {
 function SectionViewResume() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">VIEW AND DOWNLOAD RESUME</h2>
+      <h2 className="section-heading">VIEW AND DOWNLOAD RESUME</h2>
 
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
@@ -64,7 +64,7 @@ function SectionViewResume() {
 function SectionEducationSkillsTools() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">EDUCATION, SKILLS AND TOOLS</h2>
+      <h2 className="section-heading">EDUCATION, SKILLS AND TOOLS</h2>
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>
@@ -75,7 +75,7 @@ function SectionEducationSkillsTools() {
 function SectionWorkExperience() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">WORK EXPERIENCE</h2>
+      <h2 className="section-heading">WORK EXPERIENCE</h2>
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>
@@ -85,7 +85,7 @@ function SectionWorkExperience() {
 function SectionAcademicProjects() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">ACADEMIC PROJECTS AND PROGRAMS</h2>
+      <h2 className="section-heading">ACADEMIC PROJECTS AND PROGRAMS</h2>
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>
@@ -95,7 +95,7 @@ function SectionAcademicProjects() {
 function SectionAchievements() {
   return (
     <section className="content-section">
-      <h2 className="content-heading">ACHIEVEMENTS AND AWARDS</h2>
+      <h2 className="section-heading">ACHIEVEMENTS AND AWARDS</h2>
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>

@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import signaturePlaceholder from "../assets/signaturePlaceholder.png";
 
 
 export default function HeroPage() {
@@ -11,7 +10,7 @@ export default function HeroPage() {
     <div className="hero-page">
 
     <div className="hero-signature">
-        <img src={signaturePlaceholder} alt="signature" />
+        <img src="/assets/signaturePlaceholderDARK.png" alt="signature" />
       </div>
 
     <div className="hero-top">

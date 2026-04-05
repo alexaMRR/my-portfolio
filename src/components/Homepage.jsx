@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import signaturePlaceholder from "../assets/signaturePlaceholder[DARK].png";
 
 import Navbar from "./Navbar.jsx";
 
@@ -79,7 +78,7 @@ function SectionHelloWorld() {
 
                 <div className="content-signoff">
                     <span>Cheers,<br /><em>ALEXA</em></span>
-                    <img src={signaturePlaceholder} alt="signature" className="content-signature" />
+                    <img src="/assets/signaturePlaceholderDARK.png" alt="signature" />
                 </div>
 
             </p>

@@ -10,7 +10,7 @@ export default function HeroPage() {
     <div className="hero-page">
 
     <div className="hero-signature">
-        <img src="/assets/signaturePlaceholderDARK.png" alt="signature" />
+        <img src="/assets/signaturePlaceholder.png" alt="signature" />
       </div>
 
     <div className="hero-top">

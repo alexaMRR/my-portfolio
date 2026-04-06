@@ -133,7 +133,7 @@ function SectionContact() {
         <section className="content-section">
             <h2 className="section-heading">CONTACT ME</h2>
             <p className="content-body">
-        This area is under construction! Check out the icons on the top right corner for contact information. </p>
+        This area is under construction! Check out the icons on the top right corner for contact information or send me an email to alexarodriguez1273@gmail.com. </p>
         </section>
     );
 }

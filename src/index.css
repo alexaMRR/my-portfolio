@@ -407,7 +407,7 @@ a.nav-icon-btn {
   font-family: var(--font-body);
   font-weight:bold;
 }
-.Content-Detail-Container {
+.content-detail-Container {
   display: flex;
   flex-direction: row;
   margin-top: 1rem;

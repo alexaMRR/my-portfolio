@@ -84,7 +84,7 @@ function SectionHelloWorld() {
             </p>
 
             <div className="action-bar">
-                <a href="src/assets/ALEXA-RODRIGUEZ-RESUME.pdf" download className="action-btn">VIEW RESUME</a>
+                <a href="/assets/ALEXA-RODRIGUEZ-RESUME.pdf" download className="action-btn">VIEW RESUME</a>
                 <a href="mailto:alexarodriguez1273@gmail.com" className="action-btn">alexarodriguez1273@gmail.com</a>
                 <a href="/my-work" className="action-btn">RECENT WORK</a>
                 <a href="https://www.google.com/search?q=who+illustrated+bonbon+and+the+united+women+&num=10&sca_esv=f4adb27807e92ea2&sxsrf=ANbL-n6IZPvxqxTjFZPNzZ_-tBesiK9BcQ%3A1775213433710&ei=eZvPaZqGK7fRkPIPif6uwQ8&biw=1422&bih=621&ved=0ahUKEwjapvewwdGTAxW3KEQIHQm_K_gQ4dUDCBE&uact=5&oq=who+illustrated+bonbon+and+the+united+women+&gs_lp=Egxnd3Mtd2l6LXNlcnAiLHdobyBpbGx1c3RyYXRlZCBib25ib24gYW5kIHRoZSB1bml0ZWQgd29tZW4gMgQQIxgnSNAGUNUEWNUEcAF4AJABAJgBfqABfqoBAzAuMbgBA8gBAPgBAZgCAqACjAHCAggQABjvBRiwA8ICCxAAGIkFGKIEGLADmAMAiAYBkAYEkgcDMS4xoAeCArIHAzAuMbgHgwHCBwUwLjEuMcgHCYAIAQ&sclient=gws-wiz-serp" className="action-btn ">HEY GOOGLE, WHO ILLUSTRATED "BONBON" AND THE UNITED WOMEN?</a>

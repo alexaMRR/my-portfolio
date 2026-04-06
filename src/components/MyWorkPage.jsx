@@ -118,8 +118,8 @@ function SectionAcademicProjects() {
 </div>
 
 <div className="action-bar">
-                <a href="src/assets/bonbonBookFinal.pdf" download target="_blank" rel="noreferrer" className="action-btn" title="Digital Download"> <b>Download</b> "Bonbon! And the United Women" </a>
-                <a href="src/assets/bonbonBookFinal.pdf" target="_blank" className="action-btn"> <b>Open</b> PDF in your browser</a>
+                <a href="/assets/bonbonBookFinal.pdf" download target="_blank" rel="noreferrer" className="action-btn" title="Digital Download"> <b>Download</b> "Bonbon! And the United Women" </a>
+                <a href="/assets/bonbonBookFinal.pdf" target="_blank" className="action-btn"> <b>Open</b> PDF in your browser</a>
                 <a href="https://www.dailycal.org/news/campus/student-life/uc-berkeley-students-create-children-s-books-on-chicano-history-to-combat-k-12-book/article_5b997488-c3e6-11ee-9048-1f2dc643988e.html" target="_blank" className="action-btn-accent"> <b> THE DAILY CALIFORNIAN: </b> UC Berkeley students create children’s books on Chicano history to combat K-12 book bans</a>
                 <a href="https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/" target="_blank"className="action-btn-accent "> <b>UC BERKELEY NEWS:</b> UC Berkeley students combat K-12 book bans by creating their own children’s books</a>
             </div>

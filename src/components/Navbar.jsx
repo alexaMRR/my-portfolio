@@ -41,11 +41,11 @@ export default function Navbar({ navigate }) {
         <FaLinkedin /> 
         </a>
         
-        <a href="src/assets/ALEXA-RODRIGUEZ-RESUME.pdf" target="_blank" rel="noreferrer" className="nav-icon-btn" title="Open Resume in new tab">
+        <a href="/assets/ALEXA-RODRIGUEZ-RESUME.pdf" target="_blank" rel="noreferrer" className="nav-icon-btn" title="Open Resume in new tab">
          <MdOutlineOpenInBrowser /> 
         </a>
         
-        <a href="src/assets/ALEXA-RODRIGUEZ-RESUME.pdf" download target="_blank" rel="noreferrer" className="nav-icon-btn" title="Download Resume"
+        <a href="/assets/ALEXA-RODRIGUEZ-RESUME.pdf" download target="_blank" rel="noreferrer" className="nav-icon-btn" title="Download Resume"
         > 
         <FaFileDownload /> 
         </a>

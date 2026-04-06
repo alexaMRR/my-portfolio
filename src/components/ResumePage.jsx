@@ -69,7 +69,7 @@ function SectionEducationSkillsTools() {
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>
   );
-}
+} 
 
 
 function SectionWorkExperience() {

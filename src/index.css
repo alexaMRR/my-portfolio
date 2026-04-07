@@ -80,7 +80,7 @@ body {
 
 .hero-tagline {
   font-family: var(--font-display);
-  color: var(--medTan);
+  color: var(--lightBlue);
   letter-spacing: 0.22em;
   position: relative;
   z-index: 1;
@@ -179,7 +179,7 @@ body {
   height: var(--navbar-h);
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0 1.5rem;
   background:  linear-gradient(90deg,var(--darkBlue) 0%, var(--lightPurple) 100%);
   color: var(--offWhite);
@@ -187,27 +187,33 @@ body {
 
 .top-navbar a{
   text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  color: var(--offWhite);
-  padding: 0.5rem 1rem;
-  margin: 0rem 0.5rem;
+  color: var(--offWhite)
 }
 
 .navbar-link {
   text-decoration: none;
-  padding: 0.4rem 0.8rem;
   color: var(--offWhite);
-  margin: 0rem 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: .8rem;
+  font-weight: 300;
   letter-spacing: 0.05em;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  flex: 0 1 auto;
+  height: 100%;
+  align-self: stretch; 
+  line-height: 1rem;
+  width: 50%;
 }
 
 .navbar-link:hover {
-  color: var(--medTan);
-  background: rgba(30, 30, 30, 0.75);
-  border-radius: 4px;
+  color: var(--offWhite);
+  background: #1E1E1E50;
+  font-size: .9rem;
+  transition: 0.2s;
 }
 
 .navbar-logo {
@@ -220,35 +226,28 @@ body {
 
 .logo-name {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  line-height: 1;
-  color: var(--white);
+  font-size: 2rem;
+  line-height: 1.5rem;
+  color: #FFFDFA;
   letter-spacing: 0.03em;
 }
 
 .logo-tagline {
-  font-size: 0.65rem;
-  color: var(--muted);
-  line-height: 1.4;
-  border-left: 1px solid #444;
-  padding-left: 0.75rem;
+  font-size: .7rem;
+  color: #FFFDFA50;
+  line-height: 1;
 }
 
-.navbar-links {
-  display: flex;
-  gap: 0.25rem;
+.navbar-links { 
+  display: inline-flex;
+  align-items: center;
   flex: 1;
-  justify-content: center;
+  align-self: stretch;
+  justify-content: flex-start;
+  border-right: 1px solid var(--offWhite);
+  border-left: 1px solid var(--offWhite);
 }
 
-.navbar-link {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-  padding: 0.4rem 0.8rem;
-  transition: color 0.2s;
-}
 .navbar-link:hover { color: var(--white); }
 
 .navbar-actions {
@@ -263,7 +262,7 @@ body {
 
 .nav-icon-btn{
   text-decoration: none;
-  background: #21012450;
+  background:#21012475;
   color: var(--offWhite);
   display: flex;
   align-items: center;
@@ -272,9 +271,49 @@ body {
   height: 50px;
   width: 50px;
 }
+.nav-icon-btn svg{
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+.nav-icon-btn:hover svg{
+  height: 20px;
+  width: 20px;
+  transition: 0.2s;
+  cursor: pointer;
+}
 .nav-icon-btn:hover { 
   background: #00384450;
  
+}
+.nav-icon-btn-accent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  background: #FFFDFA25;
+  margin: 0rem 1rem;
+  color: var(--offWhite);
+  font-weight: 300;
+}
+.nav-icon-btn-accent span {
+  height: 100%;
+  display: flex;
+  font-size: 1rem;
+
+}
+
+.nav-icon-btn-accent:hover{
+  flex: 2; 
+  background: linear-gradient(90deg,var(--darkTan) 0%, var(--offWhite) 50%, var(--darkTan) 100%);
+  color: var(--darkPurple);
+  box-shadow: 0 0 1rem 0.5rem #FFFDFA50;
+  transition: 0.2s;
+  cursor: pointer;
+
 }
 a.nav-icon-btn {
   display: flex;

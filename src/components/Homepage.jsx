@@ -7,13 +7,13 @@ import Navbar from "./Navbar.jsx";
 const SIDEBAR_SECTIONS = [
     "Hello World!",
     "Meet Alexa",
-    "Timeline",
-    "My Journey",
+    "Education + Certificates",
+    "Skills + Tools",
+    "Achievements + Awards",
     "Contact Me",
 ];
 
 // ── Top navbar links ──────────────────────────
-const TOP_NAV_LINKS = ["Home", "Resume", "Projects", "What's New"];
 
 export default function HomePage() {
     const [activeSection, setActiveSection] = useState(SIDEBAR_SECTIONS[0]);
@@ -43,8 +43,9 @@ export default function HomePage() {
                 <main className="home-content">
                     {activeSection === "Hello World!" && <SectionHelloWorld />}
                     {activeSection === "Meet Alexa" && <SectionMeetAlexa />}
-                    {activeSection === "Timeline" && <SectionTimeline />}
-                    {activeSection === "My Journey" && <SectionMyJourney />}
+                    {activeSection === "Education + Certificates" && <SectionEducation />}
+                    {activeSection === "Skills + Tools" && <SectionSkills />}
+                    {activeSection === "Achievements + Awards" && <SectionAchievements />}
                     {activeSection === "Contact Me" && <SectionContact />}
                 </main>
 
@@ -73,7 +74,7 @@ function SectionHelloWorld() {
                 I approach my work like it's art, and I approach my problems creatively and bursting with ideas. I have a passion for breathing life into digital experiences, and hate a messy, buggy interface. I've got experience with <b>Python, React.js, HTML/CSS, SQL, Adobe Suite, Figma, and Copilot </b>. You can see the rest of my qualifications on my resume.
                 <br></br>
                 <br></br>
-                I hope you enjoy your stay in my little piece of internet. Shoot me an email or a message on LinkedIn, I’m always happy to strengthen my network and learn from others!
+                I hope you enjoy your stay in my little piece of internet. Shoot me an email or a message on LinkedIn, I’m always happy to chat and learn from others!
 
 
                 <div className="content-signoff">
@@ -103,25 +104,47 @@ function SectionMeetAlexa() {
         <section className="content-section">
             <h2 className="section-heading">MEET ALEXA</h2>
             <p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
+        Hi! My name is Alexa (Yes, like Amazon, I too respond to ‘Hey Alexa’). 
+<br></br> <br></br>
+I’ll keep it brief for now– I like to be creative however I can, I like pretty digital experiences, and I like creatively coding those experiences. 
+<br></br>I’ve always been into art as a hobby, and I’ve been exploring the tech industry since late middle school. 
+<br></br><br></br>
+I love long Figma sessions, getting pencil on paper (or stylus on screen), and the satisfaction of pushing my code to live. I’d say my best trait is always going all out on everything I do. My worst trait is working on work stuff outside work hours (especially if it’s Figma). 
+
+My other hobbies include drawing, piano, billiards, playing with my dogs, and Minecraft. I’d throw Figma in there too.
+
+
+
+
+</p>
         </section>
     );
 }
 
-function SectionTimeline() {
+function SectionEducation() {
     return (
         <section className="content-section">
-            <h2 className="section-heading">TIMELINE</h2>
+            <h2 className="section-heading">EDUCATION & CERTIFICATES</h2>
             <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
         </section>
     );
 }
 
-function SectionMyJourney() {
+function SectionSkills() {
     return (
         <section className="content-section">
-            <h2 className="section-heading">MY JOURNEY</h2>
+            <h2 className="section-heading">SKILLS & TOOLS</h2>
+            <p className="content-body">
+        This area is under construction! Check back in a day or two, or reach out!</p>
+        </section>
+    );
+}
+
+function SectionAchievements() {
+    return (
+        <section className="content-section">
+            <h2 className="section-heading">ACHIEVEMENTS & AWARDS</h2>
             <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out!</p>
         </section>

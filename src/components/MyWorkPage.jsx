@@ -3,12 +3,10 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar.jsx";     
 
 const SIDEBAR_SECTIONS = [
-  "Introduction and Guide",
+  "Overview",
   "Work Experience",
   "Academic Projects",
 ];
-
-const TOP_NAV_LINKS = ["Home", "Resume", "Projects", "What's New"];
 
 export default function MyWorkPage() {
   const [activeSection, setActiveSection] = useState(SIDEBAR_SECTIONS[0]);
@@ -35,7 +33,7 @@ export default function MyWorkPage() {
 
         {/* ── Main Content ── */}
         <main className="home-content">
-            {activeSection === "Introduction and Guide" && <SectionIntroAndGuide />}
+            {activeSection === "Overview" && <SectionOverview />}
             {activeSection === "Work Experience" && <SectionXP />}
             {activeSection === "Academic Projects" && <SectionAcademicProjects />}
         </main>
@@ -46,14 +44,18 @@ export default function MyWorkPage() {
 }
 
 
-function SectionIntroAndGuide() {
+function SectionOverview() {
   return (
     <section className="content-section">
-      <h2 className="section-heading">Introduction and Guide</h2>
+      <h2 className="section-heading">Overview</h2>
       <div className = "content-container">
-      <div className="content-body">
-        <p> This section is still under construction-- please excuse the rough edges! </p>
-        </div>
+      <p className="intro-card">
+          <p> Welcome to My Work!
+            <br></br>
+            Here you will find all information regarding professional and relevant projects I've worked on in the past.
+            <br></br> I’ve included links to relevant files and sources, along with some picture reels for your viewing pleasure. Don’t hesitate to reach out about any questions or feedback, I appreciate it!
+ </p>
+        </p>
         </div>
     </section>
   );
@@ -65,11 +67,8 @@ function SectionXP() {
 
 <div className = "content-container">
         <h2 className="section-heading">Work Experience</h2>
-        <div className="content-body">
-          <p> This section is still under construction-- please excuse the rough edges! </p>
-        </div>
       </div>
-        
+        <hr></hr>
         
       <div className = "content-container">
         <h4 className="content-heading"> UX/UI Intern (Spring 2026) | Hortus AI </h4>

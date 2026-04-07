@@ -8,7 +8,6 @@ const SIDEBAR_SECTIONS = [
 ];
 
 // ── Top navbar links ──────────────────────────
-const TOP_NAV_LINKS = ["Home", "Resume", "Projects", "What's New"];
 
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState(SIDEBAR_SECTIONS[0]);

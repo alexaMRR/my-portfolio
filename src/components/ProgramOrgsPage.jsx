@@ -3,14 +3,10 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar.jsx";     
 
 const SIDEBAR_SECTIONS = [
-  "View and Download Resume",
-  "Education, Skills and Tools",
-  "Work Experience",
-  "Academic Projects and Programs",
-  "Achievements and Awards",
+  "Timeline",
+  "Organizations",
+  "Programs",
 ];
-
-const TOP_NAV_LINKS = ["Home", "Resume", "Projects", "What's New"];
 
 export default function MyWorkPage() {
   const [activeSection, setActiveSection] = useState(SIDEBAR_SECTIONS[0]);
@@ -37,11 +33,9 @@ export default function MyWorkPage() {
 
         {/* ── Main Content ── */}
         <main className="home-content">
-            {activeSection === "View and Download Resume" && <SectionViewResume />}
-            {activeSection === "Education, Skills and Tools" && <SectionEducationSkillsTools />}
-            {activeSection === "Work Experience" && <SectionWorkExperience />}
-            {activeSection === "Academic Projects and Programs" && <SectionAcademicProjects />}
-            {activeSection === "Achievements and Awards" && <SectionAchievements />}
+            {activeSection === "Timeline" && <SectionTimeline />}
+            {activeSection === "Organizations" && <SectionOrganizations />}
+            {activeSection === "Programs" && <SectionPrograms />}
         </main>
 
       </div>
@@ -50,10 +44,10 @@ export default function MyWorkPage() {
 }
 
 
-function SectionViewResume() {
+function SectionTimeline() {
   return (
     <section className="content-section">
-      <h2 className="section-heading">VIEW AND DOWNLOAD RESUME</h2>
+      <h2 className="section-heading">TIMELINE</h2>
 
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
@@ -61,10 +55,10 @@ function SectionViewResume() {
   );
 }
 
-function SectionEducationSkillsTools() {
+function SectionOrganizations() {
   return (
     <section className="content-section">
-      <h2 className="section-heading">EDUCATION, SKILLS AND TOOLS</h2>
+      <h2 className="section-heading">ORGANIZATIONS</h2>
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>
@@ -72,32 +66,13 @@ function SectionEducationSkillsTools() {
 } 
 
 
-function SectionWorkExperience() {
+function SectionPrograms() {
   return (
     <section className="content-section">
-      <h2 className="section-heading">WORK EXPERIENCE</h2>
+      <h2 className="section-heading">PROGRAMS</h2>
       <p className="content-body">
         This area is under construction! Check back in a day or two, or reach out! </p>
     </section>
   );
 }
 
-function SectionAcademicProjects() {
-  return (
-    <section className="content-section">
-      <h2 className="section-heading">ACADEMIC PROJECTS AND PROGRAMS</h2>
-      <p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
-    </section>
-  );
-}
-
-function SectionAchievements() {
-  return (
-    <section className="content-section">
-      <h2 className="section-heading">ACHIEVEMENTS AND AWARDS</h2>
-      <p className="content-body">
-        This area is under construction! Check back in a day or two, or reach out! </p>
-    </section>
-  );
-}

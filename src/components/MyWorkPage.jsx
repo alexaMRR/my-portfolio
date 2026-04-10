@@ -71,7 +71,7 @@ function SectionXP() {
         <hr></hr>
         
       <div className = "content-container">
-        <h4 className="content-heading"> UX/UI Intern (Spring 2026) | Hortus AI </h4>
+        <h4 className="content-heading"> UX/UI Intern @ Hortus AI </h4>
         <p className= "content-subheading"> Hybrid | Oakland, CA | Jan. 2026 - May. 2026</p>
         <div className="content-body">
           <div className="content-summary">
@@ -108,9 +108,9 @@ function SectionXP() {
     </div>
 </div>
 
-<div className="action-bar">
-                <a href="https://trellis.hortus.ai/" download target="_blank" rel="noreferrer" className="action-btn" title="Visit Hortus Trellis AI "> <b>Visit</b> Hortus Trellis AI </a>
-                <a href="https://www.newamerica.org/insights/a-sustainable-path-for-ai-development/" target="_blank"className="action-btn-accent "> <b>NEW AMERICA:</b> A Sustainable Path for AI Development to Empower Communities and Serve Public Interests</a>
+<div className="action-bar-flat">
+                <a href="https://trellis.hortus.ai/" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit Hortus Trellis AI "> <b>Visit</b> Hortus Trellis AI </a>
+                <a href="https://www.newamerica.org/insights/a-sustainable-path-for-ai-development/" target="_blank"className="action-btn-flat-accent "> <b>NEW AMERICA:</b> A Sustainable Path for AI Development to Empower Communities and Serve Public Interests</a>
             </div>
 
 <div className="gallery">
@@ -144,7 +144,7 @@ function SectionXP() {
           </div>
     
     <div className= "content-detail">
-        <h3>Tools Used:</h3>
+        <h3>Toolkit:</h3>
             <li> Adobe Illustrator</li>
             <li> Adobe InDesign</li>
             <li> Procreate</li>
@@ -160,11 +160,11 @@ function SectionXP() {
     </div>
 </div>
 
-<div className="action-bar">
-                <a href="/assets/bonbonBookFinal.pdf" download target="_blank" rel="noreferrer" className="action-btn" title="Digital Download"> <b>Download</b> "Bonbon! And the United Women" </a>
-                <a href="/assets/bonbonBookFinal.pdf" target="_blank" className="action-btn"> <b>Open</b> PDF in your browser</a>
-                <a href="https://www.dailycal.org/news/campus/student-life/uc-berkeley-students-create-children-s-books-on-chicano-history-to-combat-k-12-book/article_5b997488-c3e6-11ee-9048-1f2dc643988e.html" target="_blank" className="action-btn-accent"> <b> THE DAILY CALIFORNIAN: </b> UC Berkeley students create children’s books on Chicano history to combat K-12 book bans</a>
-                <a href="https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/" target="_blank"className="action-btn-accent "> <b>UC BERKELEY NEWS:</b> UC Berkeley students combat K-12 book bans by creating their own children’s books</a>
+<div className="action-bar-flat">
+                <a href="/assets/bonbonBookFinal.pdf" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Digital Download"> <b>Download</b> "Bonbon! And the United Women" </a>
+                <a href="/assets/bonbonBookFinal.pdf" target="_blank" className="action-btn-flat"> <b>Open</b> PDF in your browser</a>
+                <a href="https://www.dailycal.org/news/campus/student-life/uc-berkeley-students-create-children-s-books-on-chicano-history-to-combat-k-12-book/article_5b997488-c3e6-11ee-9048-1f2dc643988e.html" target="_blank" className="action-btn-flat-accent"> <b> THE DAILY CALIFORNIAN: </b> UC Berkeley students create children’s books on Chicano history to combat K-12 book bans</a>
+                <a href="https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/" target="_blank"className="action-btn-flat-accent "> <b>UC BERKELEY NEWS:</b> UC Berkeley students combat K-12 book bans by creating their own children’s books</a>
             </div>
 <div className="content-summary">
     <p> <div className="darkblue">Synopsis:</div> 
@@ -210,7 +210,85 @@ function SectionXP() {
 </div>
 </div>
 </div>
-      <div className = "content-container">
+        <div className = "content-container">
+        <h4 className="content-heading"> Xolanthia's Game</h4>
+        <p className= "content-subheading"> BUILD Entrepreneurship Program | Oakland, CA | Aug. 2018 - May 2019</p>
+        <div className="content-body">
+          <div className="content-summary">
+          <p> 
+          <div className="darkblue"> Description: </div> 
+          In 2018, my high school offered BUILD as an elective for 9th graders. It focused on helping us develop a ‘CEO-of-your-own-life’ mindset, going through the entire process of developing, manufacturing, and selling our very own products through our very own companies. <br>
+          </br>My team and I developed a fantasy card game aimed at the middle-ground between UNO and Magic! The Gathering– vibrant designs, fantastical world-building, medium-length games, and lower barrier of entry. My passion to lead and create led me to taking this opportunity to the max, and to this day it’s one of my favorite projects ever. I loved developing our brand, using galaxy backgrounds and orange crystal motifs to tie into the fantasy sci-fi world we created. I facilitated the box material manufacturing, and was in charge of developing not only our product, but our brand image ‘Ember Wolf Studios’. I sincerely hope I can revisit the project soon, as my passion didn’t end when our time with the program did.
+          </p>
+          </div>
+
+        <div className= "content-detail-Container">
+          <div className= "content-detail">
+            <h3>My Role:</h3>
+            <li>Chief Executive Officer</li>
+            <li>Head of Design</li>
+            <li>Head of Operations</li>
+          </div>
+    
+    <div className= "content-detail">
+        <h3>Toolkit:</h3>
+            <li>Adobe Illustrator</li>
+            <li>User Research </li>
+            <li>Multimedia Assets (Digital, Print, Social Media)</li>
+            <li> Medibang Paint </li>
+
+    </div>
+    
+    <div className= "content-detail-highlights">
+        <h3>Highlights:</h3>
+        <li>Placed first at BUILD regional product pitch competition</li>
+        <li>Over 20 units sold</li>
+        <li>Over 40 custom card illustrations and designs </li>
+        <li>Box set includes a dice, instructions, and playing chips</li>
+        <li>Made for 2 - 5 players</li>
+    </div>
+</div>
+
+<div className="action-bar-flat">
+                <a href="https://build.org/" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit BUILD.org"> <b>Visit</b> BUILD.org</a>
+                <a href="link" target="_blank"className="action-btn-flat-accent "> <b>Get your own Xolanthia's Game set: </b>Click here to order</a>
+            </div>
+
+<div className="gallery">
+  <div className="gallery-item">
+     <a href="/assets/xolanthias/Box-Front.png"  target="_blank" rel="noreferrer">
+    <img src="/assets/xolanthias/Box-Front.png" alt="description" /> </a>
+    <p className="gallery-caption">Front of the Xolanthia's Game box - Final Version</p>
+  </div>
+  <div className="gallery-item">
+    <a href="/assets/xolanthias/XG-display.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/xolanthias/XG-display.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
+    <p className="gallery-caption">Xolanthia's Game display at the BUILD Regional open floor.</p>
+  </div>
+  <div className="gallery-item">
+    <a href="/assets/xolanthias/XG-product-evolution.png"  target="_blank" rel="noreferrer">
+    <img src="/assets/xolanthias/XG-product-evolution.png"target="_blank" rel="noreferrer" alt="description" /></a>
+    <p className="gallery-caption">Xolanthia's Game product evolution.</p>
+  </div>
+  <div className="gallery-item">
+    <a href="/assets/xolanthias/XG-rules1.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/xolanthias/XG-rules1.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
+    <p className="gallery-caption">Xolanthia's Game rules (Page 1)</p>
+  </div>
+  <div className="gallery-item">
+    <a href="/assets/xolanthias/XG-rules2.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/xolanthias/XG-rules2.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
+    <p className="gallery-caption">Xolanthia's Game rules (Page 2)</p>
+  </div>
+  <div className="gallery-item">
+    <a href="/assets/xolanthias/cards-laid-out.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/xolanthias/cards-laid-out.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
+    <p className="gallery-caption">Xolanthia's Game cards in production for first sales event.</p>
+  </div>
+</div>
+        </div>
+        </div>
+        <div className = "content-container">
         <h4 className="content-heading"> Freelance Work</h4>
         <p className= "content-subheading">  Independent Contractor | Bay Area, CA </p>
         <div className="content-body">
@@ -239,93 +317,9 @@ function SectionXP() {
     </div>
 </div>
 
-<div className="action-bar">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-accent "> <b>In the news</b>...</a>
-            </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
-        <div className = "content-container">
-        <h4 className="content-heading"> Xolanthia's Game</h4>
-        <p className= "content-subheading"> BUILD Entrepreneurship Program | Oakland, CA | Aug. 2018 - May 2019</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          Coming soon! Check back in a day or two, or reach out!
-          </p>
-          </div>
-
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Coming Soon...</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Coming Soon...</li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Coming Soon...</li>
-    </div>
-</div>
-
-<div className="action-bar">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-accent "> <b>In the news</b>...</a>
-            </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
-        <div className = "content-container">
-        <h4 className="content-heading"> K-5 Coding Instructor</h4>
-        <p className= "content-subheading">  Learn2Code and Whizara | Bay Area, CA | Fall 2025</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          Coming soon! Check back in a day or two, or reach out!
-          </p>
-          </div>
-
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Coming Soon...</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Coming Soon...</li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Coming Soon...</li>
-    </div>
-</div>
-
-<div className="action-bar">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-accent "> <b>In the news</b>...</a>
+<div className="action-bar-flat">
+                <a href="link" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit..."> <b>Visit</b>... </a>
+                <a href="link" target="_blank"className="action-btn-flat-accent "> <b>In the news</b>...</a>
             </div>
 
 <div className="gallery">

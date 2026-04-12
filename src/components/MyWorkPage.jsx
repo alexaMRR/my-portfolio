@@ -69,7 +69,6 @@ function SectionXP() {
         <h2 className="section-heading">Work Experience</h2>
       </div>
         <hr></hr>
-        
       <div className = "content-container">
         <h4 className="content-heading"> UX/UI Intern @ Hortus AI </h4>
         <p className= "content-subheading"> Hybrid | Oakland, CA | Jan. 2026 - May. 2026</p>
@@ -114,6 +113,12 @@ function SectionXP() {
             </div>
 
 <div className="gallery">
+  <div className="gallery-item">
+     <a href="/assets/hortus/hortus-landing-1.0.png"  target="_blank" rel="noreferrer">
+    <img src="/assets/hortus/hortus-landing-1.0.png" alt="description" /> </a>
+    <p className="gallery-caption">Hortus AI Landing Page v1.0 | Redesigned the landing page, creating a tree of life image with mandala elements to tie into brand identity emphasizing the human-technology ecosystem. </p>
+  </div>
+  
   <div className="gallery-item">
      <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
     <img src="/assets/comingSoon.png" alt="description" /> </a>

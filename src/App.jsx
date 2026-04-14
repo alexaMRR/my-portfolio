@@ -4,7 +4,7 @@ import HeroPage from "./components/Heropage.jsx";
 import HomePage from "./components/Homepage.jsx";
 import ProgramOrgsPage from "./components/ProgramOrgsPage.jsx";
 import MyWorkPage from "./components/MyWorkPage.jsx";
-import WhatsNewPage from "./components/WhatsNewPage.jsx";
+import TLDR from "./components/TLDR.jsx";
 import "./index.css";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
   <Route path="/home" element={<HomePage />} />
   <Route path="/orgs" element={<ProgramOrgsPage />} />
   <Route path="/my-work" element={<MyWorkPage />} />
-  <Route path="/whats-new" element={<WhatsNewPage />} />
+  <Route path="/tldr" element={<TLDR />} />
   </Routes>
   );
 }

@@ -38,7 +38,7 @@ export default function HeroPage() {
 
         <button
           className="hero-button"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/tldr")}
         >
           Welcome In <span className="who-arrow">↓</span>
         </button>

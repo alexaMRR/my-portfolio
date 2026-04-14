@@ -29,10 +29,10 @@ export default function HomePage() {
     const [activeLink, setActiveLink] = useState("Home");
     const navigate = useNavigate();
     useEffect(() => {
-  alert(" April 3rd, 2026: Welcome! I'm in the process of migrating my website's design and structure, so it might be a little unfinished. Thank you for your patience!");}, []); 
+  alert(" April 14th, 2026: Welcome! I'm in the process of migrating my website's design and structure, so it might be a little unfinished. Thank you for your patience!");}, []); 
     return (
         <div className="home-page">
-            <Navbar navigate={navigate} />
+            <Navbar navigate={navigate} activePage="home" />
             <div className="home-body">
 
                 {/* ── Left Sidebar ── */}

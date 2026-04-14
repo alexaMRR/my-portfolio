@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaFileDownload } from "react-icons/fa";
 
-export default function Navbar({ navigate }) {
+export default function Navbar({ navigate, activePage }) {
   return (
     <header className="top-navbar">
 
@@ -14,10 +14,10 @@ export default function Navbar({ navigate }) {
       </div>
 
       <nav className="navbar-links" aria-label="Main navigation">
+        <a href="/tldr" className={`navbar-link ${activePage === "tldr" ? "active" : ""}`}>TL;DR</a>
         <a href="/home" className="navbar-link">Home</a>
         <a href="/orgs" className="navbar-link">Programs and Organizations</a>
         <a href="/my-work" className="navbar-link">My Work</a>
-        <a href="/whats-new" className="navbar-link">What's New</a>
       </nav>
 
       <div className="navbar-actions">

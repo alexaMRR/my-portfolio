@@ -10,12 +10,12 @@ const SIDEBAR_SECTIONS = [
 
 export default function MyWorkPage() {
   const [activeSection, setActiveSection] = useState(SIDEBAR_SECTIONS[0]);
-  const [activeLink, setActiveLink] = useState("MyWork");
+  const [activeLink, setActiveLink] = useState("my-work");
   const navigate = useNavigate();
   
   return (
     <div className="home-page">
-        <Navbar navigate={navigate} />
+        <Navbar navigate={navigate} activePage="my-work" />
       <div className="home-body">
 
         {/* ── Left Sidebar ── */}

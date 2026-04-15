@@ -16,7 +16,7 @@
   --font-display: 'Bayon', sans-serif;
   --font-body:    'DM Sans', sans-serif;
   --sidebar-w:  10rem;
-  --navbar-h:   64px;
+  --navbar-h:   70px;
 }
 
 body {
@@ -273,13 +273,13 @@ body {
   width: 50px;
 }
 .nav-icon-btn svg{
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   cursor: pointer;
 }
 .nav-icon-btn:hover svg{
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   transition: 0.2s;
   cursor: pointer;
 }
@@ -347,7 +347,7 @@ a.nav-icon-btn {
   align-items: flex-start;
 }
 .tldr-page .home-content {
-  padding: 2.5rem 10rem;
+  padding: 2.5rem 7rem;
 }
 .tldr-page .home-content h2 {
   font-size: 7rem;
@@ -361,16 +361,35 @@ a.nav-icon-btn {
   color: var(--offWhite);
   display: flex;
 }
-.tldr-page .home-content .intro-card .content-signoff{
+
+.tldr-page .content-signoff{
   color: var(--offWhite);
   margin-top: 2rem;
 }
-.tldr-page .home-content .intro-card .content-signoff em{
+.tldr-page .content-signoff em{
   color: var(--offWhite);
   
   font-size: 2.5rem;
 }
+.tldr-page .content-signoff img{
+  width: 15rem;
+  height: auto;
+  margin: 0rem 2rem 0rem 0rem;
+}
 
+.tldr-page .gallery::-webkit-scrollbar-thumb {
+  background: linear-gradient(to left in oklch, rgba(117, 13, 55, 0.5), rgba(0, 56, 68, 0.5));
+  border-radius: 10px;
+}
+
+.tldr-page .gallery-item {
+  flex-shrink: 0;
+  width: 200px;
+  scroll-snap-align: start;
+  background: transparent;
+  padding: 0rem 0rem 0rem 0rem;
+  border-radius: 5px;
+}
 /* ── Left Sidebar ── */
 .sidebar {
   width: var(--sidebar-w);
@@ -473,6 +492,7 @@ a.nav-icon-btn {
   width: 15rem;
   height: auto;
   margin: 0rem 1rem 0rem 0rem;
+  align-self: flex-start;  
 }
 .content-body {
   font-size: 0.8rem;
@@ -641,8 +661,8 @@ a.nav-icon-btn {
 .action-bar-flat {
   display: flex;
   width: 100%;
-  background: var(--medTan);
-  margin-top: 1rem;
+  border-radius:5px;
+
 }
 
 .action-btn-flat {
@@ -651,44 +671,41 @@ a.nav-icon-btn {
   font-family: var(--font-body);
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: var(--darkPurple);
+  color: var(--medTan);
   text-align: center;
   text-decoration: none;
-  border-right: 1px solid var(--offWhite);
-  border-left: 1px solid var(--offWhite);
   transition: background 0.2s;
   cursor: pointer;
+  margin:0rem 0.2rem;  
+  background: #1E1E1E;
+  border-radius: 5px;
 }  
 .action-btn-flat-accent{
   flex: 2; 
-  padding: 0.5rem;
+  padding: 0.2rem;
   font-family: var(--font-body);
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: var(--darkPurple);
+  color: var(--medTan);
   text-align: center;
   text-decoration: none;
-  border-right: 1px solid var(--offWhite);
-  border-left: 1px solid var(--offWhite);
+  margin: 0rem 0.2rem;
   transition: background 0.2s;
   cursor: pointer;
-  background-color: var(--medTan);
+  background-color: var(--offBlack);
+  border-radius: 5px;
 } 
 .action-btn-flat:hover {
   flex: 1;
   font-family: var(--font-body);
-  color: var(--offWhite);
+  color: var(--offBlack);
   transition: background 0.2s;
   cursor: pointer;
   background-color: var(--darkTan);
 }
 .action-btn-flat-accent:hover{
   flex: 2; 
-  padding: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  color: var(--offWhite);
+  color: var(--offBlack);
   text-align: center;
   transition: background 0.2s;
   cursor: pointer;
@@ -750,7 +767,6 @@ a.nav-icon-btn {
 }
 .awards .singleCard {
   background: var(--offWhite);
-  color:red;
   border: var(--darkPurple) solid 2px;
 }
 
@@ -790,6 +806,7 @@ a.nav-icon-btn {
   padding: 1rem 0;
   scroll-snap-type: x mandatory;
   margin: 0rem 1rem;
+  color: var(--offblack);
 }
 
 .gallery::-webkit-scrollbar {
@@ -884,13 +901,33 @@ a.nav-icon-btn {
   .home-content { padding: 1.5rem; }
 }
 
+.flashcardGradient {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  padding: 2rem;
+  background: linear-gradient(to right in oklch, var(--darkBlue) 0%, var(--lightPurple) 100%);
+  box-shadow: -1rem -0.5rem 0rem 0rem rgba(117, 13, 55, 0.1) ;
+  border-radius: 5px;
+  margin: 1rem 0rem;
+}
+.flashcardGradient p{
+  color:var(--offWhite);
+  background: rgba(255,253,250, 0.2);
+  list-style-position: inside;
+  padding-left: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  font-size: .7rem;
+}
 .flashcardRed {
   display: grid;
   grid-template-columns: 260px 1fr;
   grid-template-rows: auto auto;
-  gap: 12px;
+  gap: 10px;
   padding: 2rem;
-  background: linear-gradient(to left in oklch, var(--lightPurple) 0%, var(--darkPurple) 100%);
+  background: linear-gradient(to right in oklch, var(--lightPurple) 0%, var(--darkPurple) 100%);
   box-shadow: -1rem -0.5rem 0rem 0rem rgba(117, 13, 55, 0.1) ;
   border-radius: 5px;
   margin: 1rem 0rem;
@@ -901,26 +938,27 @@ a.nav-icon-btn {
   grid-template-rows: auto auto;
   gap: 12px;
   padding: 2rem;
-  background: linear-gradient(to left in oklch, var(--lightBlue) 0%, var(--darkBlue) 100%);
+  background: linear-gradient(to right in oklch, var(--lightBlue) 0%, var(--darkBlue) 100%);
   box-shadow: -1rem -0.5rem 0rem 0rem rgba(0, 56, 68, 0.1) ;
   border-radius: 5px;
   margin: 1rem 0rem;
 }
 .flashcardBlue p{
-  color:black;
+  color:var(--offWhite);
   background: rgba(255,253,250, 0.2);
   list-style-position: inside;
   padding-left: 1rem;
-  margin-top:0.5rem;
-  border-radius: 5px
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  font-size: .7rem;
 }
 .flashcardRed p{
-  color:black;
+  color:var(--offWhite);
   background: rgba(255,253,250, 0.2);
   list-style-position: inside;
-  padding-left: 1rem;
-    border-radius: 5px
-
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  font-size: .7rem;
 }
 
 
@@ -929,7 +967,7 @@ a.nav-icon-btn {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  margin-bottom: 8px;
+  margin-bottom: .1rem;
 }
 .flashcard-title {
   display: flex;
@@ -937,14 +975,15 @@ a.nav-icon-btn {
   gap: 6px;
   color: white;
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1;
   margin: 0; 
 }
 .flashcard-subtitle {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 1rem;
   color: var(--medTan);
+  line-height: 1rem;
+  font-weight: 100;
 }
 .flashcard-left-column {
   display: flex;
@@ -980,9 +1019,14 @@ a.nav-icon-btn {
   border-radius: 5px;
   font-size: 0.75rem;
   color: var(--darkPurple);
-    display: flex;
+  font-weight: 700;
+  display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1rem;
+  min-height: 2.5rem; 
+  text-align: center;
+
 }
 
 

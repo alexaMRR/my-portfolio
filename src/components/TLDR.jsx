@@ -33,12 +33,20 @@ function TLDR() {
   return (
     <section className="content-section">
       <h2 className="section-heading">TL;DR</h2>
-      <p className="intro-card">
-        <img src="/assets/myGallery/alexaTLDR.jpg" alt="alexa" className="intro-card-img" />
-        <div className="intro-card-body">
-                Hey there! I'm <b>Alexa</b>. I attend the <b>University of California, Berkeley</b>, where I'm pursuing a major in <b> Cognitive Science </b>. 
-                <br></br>
-                I'm a programmer, developer, and designer. I compose ideas, perfect designs, code the components, and ship the final product– I can do it all.
+<div className = "flashcardGradient"> 
+<div className="flashcard-left-column"> 
+  <img src="/assets/myGallery/alexaTLDR.jpg" alt="alexa" className="flashcard-logo" />
+
+</div>
+<div className="flashcard-right-column-top"> <div class="title-block">
+  <div className="flashcard-title">
+    Hey, I'm Alexa  =-)
+  </div>
+  <div className="flashcard-subtitle"> 
+    San Francisco Bay Area | Cognitive Science @ UC Berkeley 
+  </div>
+</div> 
+<p> I'm a programmer, developer, and designer. I compose ideas, perfect designs, code the components, and ship the final product– I can do it all. 
                 <br></br>
                 <br></br>
                 I approach my work like it's art-- I have a passion for breathing life into digital experiences. 
@@ -47,13 +55,12 @@ function TLDR() {
                 <br></br>
                 Hope you enjoy! :{')'} 
 
-
+</p>
                 <div className="content-signoff">
                     <span>Cheers,<br /><em>ALEXA</em></span>
                     <img src="/assets/signaturePlaceholder.png" alt="signature" />
                 </div></div>
-
-            </p>
+</div>
 
             <div className = "flashcardRed"> 
 <div className="flashcard-left-column"> 
@@ -67,6 +74,7 @@ function TLDR() {
       <div className="flashcard-skill">Jira</div>
       <div className="flashcard-skill">Github</div>
       <div className="flashcard-skill">Adobe Suite</div>
+      <div className="flashcard-skill">Canva</div>
       
     </div>
 
@@ -86,18 +94,24 @@ function TLDR() {
         <li>Led dark mode development across product site</li>
         <li>Redesigned landing page, improving user flow and engagement</li>
         <li>Spearheaded AI assistant design and user functionality</li>
+        <li>Designed vendor and customer newsletter templates</li>
   </p>
+  <div className="action-bar-flat">
+                <a href="https://trellis.hortus.ai/" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit Hortus Trellis AI "> <b>Visit</b> Hortus Trellis AI </a>
+                <a href="https://www.newamerica.org/insights/a-sustainable-path-for-ai-development/" target="_blank"className="action-btn-flat-accent "> <b>NEW AMERICA:</b> A Sustainable Path for AI Development to Empower Communities and Serve Public Interests</a>
+            </div>
 <div className="gallery">
   <div className="gallery-item">
      <a href="/assets/hortus/hortus-landing-1.0.png"  target="_blank" rel="noreferrer">
     <img src="/assets/hortus/hortus-landing-1.0.png" alt="description" /> </a>
-    <p className="gallery-caption">Hortus AI Landing Page v1.0 | Redesigned the landing page, creating a tree of life image with mandala elements to tie into brand identity emphasizing the human-technology ecosystem. </p>
   </div>
-  
+  <div className="gallery-item">
+     <a href="/assets/hortus/hortus-vendor-newsletter.png"  target="_blank" rel="noreferrer">
+    <img src="/assets/hortus/hortus-vendor-newsletter.png" alt="description" /> </a>
+  </div>
   <div className="gallery-item">
      <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
     <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
   </div></div>
 </div>
 
@@ -113,9 +127,11 @@ function TLDR() {
       <div className="flashcard-skill">Adobe InDesign</div>
       <div className="flashcard-skill">Procreate</div>
       <div className="flashcard-skill">Photoshop</div>      
+      <div className="flashcard-skill">Canva</div>
     </div>
-
 </div>
+
+
 <div className="flashcard-right-column-top"> <div class="title-block">
   <div className="flashcard-title">
     Illustrator, Co-Author of "Bonbon! And the United Women"
@@ -132,53 +148,52 @@ function TLDR() {
         <li>Locally published with Eastwind Books of Berkeley</li>
         <li>Sub-72 hour turnaround</li>
   </p>
+  <div className="action-bar-flat">
+                <a href="/assets/bonbonBookFinal.pdf" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Digital Download"> <b>Download</b> Digital PDF </a>
+                <a href="/assets/bonbonBookFinal.pdf" target="_blank" className="action-btn-flat"> <b>Open</b> PDF in your browser</a>
+                <a href="https://www.dailycal.org/news/campus/student-life/uc-berkeley-students-create-children-s-books-on-chicano-history-to-combat-k-12-book/article_5b997488-c3e6-11ee-9048-1f2dc643988e.html" target="_blank" className="action-btn-flat-accent"> <b> THE DAILY CALIFORNIAN: </b> UC Berkeley students create children’s books...</a>
+                <a href="https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/" target="_blank"className="action-btn-flat-accent "> <b>UC BERKELEY NEWS:</b> UC Berkeley students combat K-12 book bans...</a>
+            </div>
   <div className="gallery">
   <div className="gallery-item">
      <a href="/assets/bonbon/book-sather-tower.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/bonbon/book-sather-tower.jpg" alt="description" /> </a>
-    <p className="gallery-caption">Printed copy in front of Sather Tower</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/books-ethnic-studies-lib.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/books-ethnic-studies-lib.jpg" ttarget="_blank" rel="noreferrer"alt="description" /> </a>
-    <p className="gallery-caption">Two physical copies in the UC Berkeley Ethnic Studies Library</p>
-  </div>
+    <img src="/assets/bonbon/books-ethnic-studies-lib.jpg" ttarget="_blank" rel="noreferrer"alt="description" /> </a>  </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/luigi-pages-photograph.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/bonbon/luigi-pages-photograph.jpg" target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Book expo setup along with a picture of Luigi (my muse!)</p> 
+
   </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/bonbon-Character-Sketching.png"  target="_blank" rel="noreferrer">
     <img src="/assets/bonbon/bonbon-Character-Sketching.png" target="_blank" rel="noreferrer" alt="description" /> </a>
-    <p className="gallery-caption">Brainstorming character design and artstyle</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/bonbon-p1-sketch.png"  target="_blank" rel="noreferrer">
     <img src="/assets/bonbon/bonbon-p1-sketch.png" target="_blank" rel="noreferrer" alt="description" /> </a>
-    <p className="gallery-caption">Opening page sketch </p>
   </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/full-spread-illustration-photograph.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/bonbon/full-spread-illustration-photograph.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Full-spread illustration across two pages in physical copy</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/two-page-spread-sketch.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/bonbon/two-page-spread-sketch.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Full-spread illustration sketch in production</p>
   </div>
 </div>
 </div>
-
-
 </div>
+
+
 <div className = "flashcardRed"> 
 <div className="flashcard-left-column"> 
   <img src= "/assets/eps88-solar-cycle/num_sunspots-over-time.png" alt="Graph: Number of Sunspots Over Time" className="flashcard-logo"/>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">Data Analysis</div>
-      <div className="flashcard-skill">Back-end Dev.</div>
+      <div className="flashcard-skill">Back-end Development</div>
       <div className="flashcard-skill">Python</div>
       <div className="flashcard-skill">sklearn</div>
       <div className="flashcard-skill">JupyterNotebook</div>
@@ -200,18 +215,25 @@ function TLDR() {
 </div> 
 
  <p>
-        <li>Github link coming on 4/16</li>
-        <li>Highlight coming soon...</li>
-        <li>Highlight coming soon...</li>
-        <li>Highlight coming soon...</li>
-        <li>Highlight coming soon...</li>
+        <li>Data analysis project investigating correlations between solar activity affecting satellites, GPS, and power grids</li>
+        <li>Built data pipelines in Python to clean geomagnetic and solar cycle datasets from NOAA and GFZ Potsdam</li>
+        <li>Applied Pearson correlation + feature lagging to quantify sunspot frequency and geomagnetic activity </li>
+        <li>Built visualizations using Matplotlib to illustrate solar cycles and cross-dataset trends spanning several decades</li>
   </p>
+  <div className="action-bar-flat">
+    <a href="https://github.com/alexaMRR/eps88-final" className="action-btn-flat" title="Github">Open in <b>Github</b></a>
+    <a href="https://github.com/AI4EPS/EPS88_2024"  className="action-btn-flat" title="Course Github"> Visit the <b>EPS 88 Repo</b> </a>
+  </div>
 <div className="gallery">
   <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div></div>
+     <a href="/assets/eps88-solar-cycle/kp-index-over-time.png"  target="_blank" rel="noreferrer">
+    <img src="/assets/eps88-solar-cycle/kp-index-over-time.png" alt="description" /> </a>
+  </div>
+  <div className="gallery-item">
+     <a href="/assets/eps88-solar-cycle/num_sunspots-over-time.png"  target="_blank" rel="noreferrer">
+    <img src="/assets/eps88-solar-cycle/num_sunspots-over-time.png" alt="description" /> </a>
+  </div>
+  </div>
 </div>
 
 
@@ -232,7 +254,7 @@ function TLDR() {
 </div>
 <div className="flashcard-right-column-top"> <div class="title-block">
   <div className="flashcard-title">
-    Chief Executive Officer, Head of Design @ Xolanthia's Game
+    CEO & Head of Design @ Xolanthia's Game
   </div>
   <div className="flashcard-subtitle"> 
     BUILD Entrepreneurship Program | Oakland, CA | 2018 - 2019
@@ -246,36 +268,34 @@ function TLDR() {
         <li>Box set includes a dice, instructions, and playing chips</li>
         <li>Made for 2 - 5 players</li>
   </p>
+  <div className="action-bar-flat">
+                <a href="https://build.org/" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit BUILD.org"> <b>Visit</b> BUILD.org</a>
+                <a href="mailto:alexarodriguez1273@gmail.com" className="action-btn-flat-accent "> <b>Get your own Xolanthia's Game set: </b>Click here to order</a>
+            </div>
 <div className="gallery">
   <div className="gallery-item">
      <a href="/assets/xolanthias/Box-Front.png"  target="_blank" rel="noreferrer">
     <img src="/assets/xolanthias/Box-Front.png" alt="description" /> </a>
-    <p className="gallery-caption">Front of the Xolanthia's Game box - Final Version</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/xolanthias/XG-display.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/xolanthias/XG-display.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game display at the BUILD Regional open floor.</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/xolanthias/XG-product-evolution.png"  target="_blank" rel="noreferrer">
     <img src="/assets/xolanthias/XG-product-evolution.png"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game product evolution.</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/xolanthias/XG-rules1.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/xolanthias/XG-rules1.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game rules (Page 1)</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/xolanthias/XG-rules2.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/xolanthias/XG-rules2.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game rules (Page 2)</p>
   </div>
   <div className="gallery-item">
     <a href="/assets/xolanthias/cards-laid-out.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/xolanthias/cards-laid-out.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game cards in production for first sales event.</p>
   </div>
 </div>
 
@@ -302,22 +322,24 @@ function TLDR() {
 </div> 
 
  <p>
-        <li>Github link coming on 4/16</li>
-        <li>Highlight coming soon...</li>
-        <li>Highlight coming soon...</li>
-        <li>Highlight coming soon...</li>
-        <li>Highlight coming soon...</li>
+        <li>Engineered turn-based game logic using recursion to manage multiple dynamic states using Python</li>
+        <li>Implemented 10+ object entity subclasses using OOP principles like abstraction, inheritance, and polymorphism</li>
+        <li>Navigated complex starter code, adapting to pre-existing style and structure</li>
   </p>
+  
+   <div className="action-bar-flat">
+    <a href="link" className="action-btn-flat" title="Github">Github link coming soon...</a>
+    <a href="https://cs61a.org/proj/ants/"  className="action-btn-flat" title="Course Github"> Learn about <b>CS61a's</b> Ants Vs. SomeBees</a>
+  </div>
 <div className="gallery">
   <div className="gallery-item">
      <a href="/assets/c88/ants-vs-somebees-demo.gif"  target="_blank" rel="noreferrer">
     <img src="/assets/c88/ants-vs-somebees-demo.gif" alt="description" /> </a>
-    <p className="gallery-caption">Ants Vs. Somebees demo, courtesy of UC Berkeley</p>
   </div></div>
 </div> </div>
 <div className = "flashcardBlue"> 
 <div className="flashcard-left-column"> 
-  <img src= "/assets/comingSoon.png" alt="Xolanthias Game" className="flashcard-logo"/>
+  <img src= "/assets/myGallery/berkeley-espresso.jpg" alt="Working at Berkeley Espresso" className="flashcard-logo"/>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">Graphic Design</div>
       <div className="flashcard-skill">Product Design</div>
@@ -339,16 +361,27 @@ function TLDR() {
 </div> 
 
  <p>
-        <li>Aspire GSP highschool uniforms...</li>
-        <li>Deaf Women's sports jersey design...</li>
-        <li>More coming on 4/16...</li>
+        <li>Aspire Golden State Prep highschool uniforms</li>
+        <li>Cali Panthers Uniform -- Deaf Women's Flag Football Association </li>
   </p>
 <div className="gallery">
   <div className="gallery-item">
+     <a href="/assets/freelance/gsp-shirt-logo.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/freelance/gsp-shirt-logo.jpg" alt="description" /> </a>  </div>
+    <div className="gallery-item">
+     <a href="/assets/freelance/gsp-shirt-portrait.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/freelance/gsp-shirt-portrait.jpg" alt="description" /> </a>  </div>
+    <div className="gallery-item">
+     <a href="/assets/freelance/cali-panthers-front.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/freelance/cali-panthers-front.jpg" alt="description" /> </a>  </div>
+    <div className="gallery-item">
+     <a href="/assets/freelance/cali-panthers-back.jpg"  target="_blank" rel="noreferrer">
+    <img src="/assets/freelance/cali-panthers-back.jpg" alt="description" /> </a>  </div>
+    <div className="gallery-item">
      <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div></div>
+    <img src="/assets/comingSoon.png" alt="description" /> </a>  </div>
+    
+    </div>
 </div></div>
     </section>
   );

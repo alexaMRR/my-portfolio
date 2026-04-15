@@ -1,6 +1,6 @@
 import React from "react";
 import { MdOutlineOpenInBrowser } from "react-icons/md";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaFileDownload } from "react-icons/fa";
 
@@ -33,11 +33,16 @@ export default function Navbar({ navigate, activePage }) {
         <a href="https://linkedin.com/in/alexa-m-rodriguez" target="_blank" rel="noreferrer" className="nav-icon-btn" title="LinkedIn"> 
         <FaLinkedin /> 
         </a>
-        
+        <a href="https://github.com/alexaMRR" target="_blank" rel="noreferrer" className="nav-icon-btn" title="Github"> 
+        <FaGithub /> 
+        </a>
         <a href="/assets/ALEXA-RODRIGUEZ-RESUME.pdf" download target="_blank" rel="noreferrer" className="nav-icon-btn-accent" title="Download Resume">
         <FaFileDownload /> 
          <span>Download Resume</span>
         </a>
+
+        
+        
       </div>
 
     </header>

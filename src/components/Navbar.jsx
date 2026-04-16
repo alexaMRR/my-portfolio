@@ -9,15 +9,16 @@ export default function Navbar({ navigate, activePage }) {
     <header className="top-navbar">
 
      <div className="navbar-logo" onClick={() => navigate("/")} role="button" tabIndex={0}>
-        <span className="logo-name">ALEXA<br />RODRIGUEZ</span>
-        <span className="logo-tagline">Design. <br></br>Perfect<br />Code <br></br> Ship</span>
+        
+        <span className="logo-tagline">Design. <br></br>Code. <br></br> Ship.</span>
+      <span className="logo-name">ALEXA<br />RODRIGUEZ</span>
       </div>
 
       <nav className="navbar-links" aria-label="Main navigation">
         <a href="/tldr" className={`navbar-link ${activePage === "tldr" ? "active" : ""}`}>TL;DR</a>
-        <a href="/home" className="navbar-link">Home</a>
-        <a href="/orgs" className="navbar-link">Programs and Organizations</a>
-        <a href="/my-work" className="navbar-link">My Work</a>
+        <a href="/home" className={`navbar-link ${activePage === "home" ? "active" : ""}`}>Home</a>
+        <a href="/orgs" className={`navbar-link ${activePage === "orgs" ? "active" : ""}`}>Programs and Organizations</a>
+        <a href="/my-work" className={`navbar-link ${activePage === "my-work" ? "active" : ""}`}>My Work</a>
       </nav>
 
       <div className="navbar-actions">

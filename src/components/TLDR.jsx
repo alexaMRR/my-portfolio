@@ -15,7 +15,7 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-        <Navbar navigate={navigate} activePage="TLDR"/>
+        <Navbar navigate={navigate} activePage="tldr"/>
       <div className="home-body tldr-page">
 
         {/* ── Main Content ── */}
@@ -46,7 +46,8 @@ function TLDR() {
     San Francisco Bay Area | Cognitive Science @ UC Berkeley 
   </div>
 </div> 
-<p> I'm a programmer, developer, and designer. I compose ideas, perfect designs, code the components, and ship the final product– I can do it all. 
+<p> A designer in a room of programmers, and a programmer in a room of designers. 
+  <br></br><br></br>I speak the languages of both sides in human-computer interaction. I compose ideas, perfect designs, code the components, and ship the final product– I can do it all. 
                 <br></br>
                 <br></br>
                 I approach my work like it's art-- I have a passion for breathing life into digital experiences. 
@@ -64,7 +65,10 @@ function TLDR() {
 
             <div className = "flashcardRed"> 
 <div className="flashcard-left-column"> 
+  <figure>
   <img src= "/assets/logos/Hortus-Logo.png" alt="hortus logo" className="flashcard-logo"/>
+    <figcaption>Courtesy of Hortus AI </figcaption>
+    </figure>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">UX/UI Design</div>
       <div className="flashcard-skill">Front-End Dev.</div>
@@ -88,13 +92,13 @@ function TLDR() {
   </div>
 </div> 
 
- <p>
-        <li>Introduced ‘leaf’ formatting motif adopted across entire product</li>
-        <li>Created custom 'Tree of Life' + mandala design and implemented using SVG Paths</li>
-        <li>Led dark mode development across product site</li>
-        <li>Redesigned landing page, improving user flow and engagement</li>
-        <li>Spearheaded AI assistant design and user functionality</li>
-        <li>Designed vendor and customer newsletter templates</li>
+ <p>BRAND RECOGNITION THROUGH UNIQUE DESIGN:
+        <li>Border-radius 'leaf' motif, dynamic SVG Tree Mandala design, and color composition overhaul </li>
+<br></br>
+      CONFIDENTLY HANDS-ON:
+        <li>Led dark mode development across product</li>
+        <li>Overhauled landing page, newsletter templates, </li>
+        <li>Led website AI assistant design, user interaction, and implemination</li>
   </p>
   <div className="action-bar-flat">
                 <a href="https://trellis.hortus.ai/" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit Hortus Trellis AI "> <b>Visit</b> Hortus Trellis AI </a>
@@ -141,16 +145,18 @@ function TLDR() {
   </div>
  
 </div> 
- <p>
+ <p> RELENTLESSLY AMBITOUS:
         <li>33 Pages with over 20 illustrations</li>
         <li>Bilingual (Spanish/English)</li>
+<br></br>
+    WIDELY RECOGNIZED:
         <li>“Best Illustration” and “Best Overall” in cohort</li>
         <li>Locally published with Eastwind Books of Berkeley</li>
-        <li>Sub-72 hour turnaround</li>
+        <li>Feaured in the DailyCal, UC Berkeley News, and Berkeley Journalism M.A. Thesis</li>
   </p>
   <div className="action-bar-flat">
-                <a href="/assets/bonbonBookFinal.pdf" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Digital Download"> <b>Download</b> Digital PDF </a>
-                <a href="/assets/bonbonBookFinal.pdf" target="_blank" className="action-btn-flat"> <b>Open</b> PDF in your browser</a>
+                <a href="/assets/bonbon/bonbonBookFINAL.pdf" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Digital Download"> <b>Download</b> Digital PDF </a>
+                <a href="/assets/bonbon/bonbonBookFINAL.pdf" target="_blank" className="action-btn-flat"> <b>Open</b> PDF in your browser</a>
                 <a href="https://www.dailycal.org/news/campus/student-life/uc-berkeley-students-create-children-s-books-on-chicano-history-to-combat-k-12-book/article_5b997488-c3e6-11ee-9048-1f2dc643988e.html" target="_blank" className="action-btn-flat-accent"> <b> THE DAILY CALIFORNIAN: </b> UC Berkeley students create children’s books...</a>
                 <a href="https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/" target="_blank"className="action-btn-flat-accent "> <b>UC BERKELEY NEWS:</b> UC Berkeley students combat K-12 book bans...</a>
             </div>
@@ -161,7 +167,7 @@ function TLDR() {
   </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/books-ethnic-studies-lib.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/books-ethnic-studies-lib.jpg" ttarget="_blank" rel="noreferrer"alt="description" /> </a>  </div>
+    <img src="/assets/bonbon/books-ethnic-studies-lib.jpg" target="_blank" rel="noreferrer"alt="description" /> </a>  </div>
   <div className="gallery-item">
     <a href="/assets/bonbon/luigi-pages-photograph.jpg"  target="_blank" rel="noreferrer">
     <img src="/assets/bonbon/luigi-pages-photograph.jpg" target="_blank" rel="noreferrer" alt="description" /></a>
@@ -221,8 +227,8 @@ function TLDR() {
         <li>Built visualizations using Matplotlib to illustrate solar cycles and cross-dataset trends spanning several decades</li>
   </p>
   <div className="action-bar-flat">
-    <a href="https://github.com/alexaMRR/eps88-final" className="action-btn-flat" title="Github">Open in <b>Github</b></a>
-    <a href="https://github.com/AI4EPS/EPS88_2024"  className="action-btn-flat" title="Course Github"> Visit the <b>EPS 88 Repo</b> </a>
+    <a href="https://github.com/alexaMRR/eps88-final" className="action-btn-flat" title="Github"target="_blank" rel="noreferrer" alt="description">Open in <b>Github</b></a>
+    <a href="https://github.com/AI4EPS/EPS88_2024"  className="action-btn-flat" title="Course Github"target="_blank" rel="noreferrer" alt="description"> Visit the <b>EPS 88 Repo</b> </a>
   </div>
 <div className="gallery">
   <div className="gallery-item">
@@ -302,10 +308,14 @@ function TLDR() {
 </div></div>
 <div className = "flashcardRed"> 
 <div className="flashcard-left-column"> 
-  <img src= "/assets/c88/ants-vs-somebees.png" alt="Ants Vs. Somebees Splash" className="flashcard-logo"/>
+  <figure>
+    <img src= "/assets/c88/ants-vs-somebees.png" alt="Ants Vs. Somebees Splash" className="flashcard-logo"/>
+  <figcaption>Courtesy of CS61a Project Site</figcaption>
+</figure>
+  
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">Python</div>
-      <div className="flashcard-skill">Back-end Dev.</div>
+      <div className="flashcard-skill">Back-end Development</div>
       <div className="flashcard-skill">Game Design</div>
       <div className="flashcard-skill">Object-oriented Programming</div>
       <div className="flashcard-skill">Data Structures</div>
@@ -339,7 +349,10 @@ function TLDR() {
 </div> </div>
 <div className = "flashcardBlue"> 
 <div className="flashcard-left-column"> 
-  <img src= "/assets/myGallery/berkeley-espresso.jpg" alt="Working at Berkeley Espresso" className="flashcard-logo"/>
+  <figure>
+    <img src= "/assets/myGallery/berkeley-espresso.jpg" alt="Working at Berkeley Espresso" className="flashcard-logo"/>
+    <figcaption>Working out of Berkeley Espresso {'('}so good!!!{')'}</figcaption>
+</figure>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">Graphic Design</div>
       <div className="flashcard-skill">Product Design</div>

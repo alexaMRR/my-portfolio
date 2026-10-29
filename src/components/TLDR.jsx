@@ -88,7 +88,7 @@ function TLDR() {
  <p> INNOVATION IN AI:
         <li>Participated in pivotal AI Governance meetings shaping forefront of AI policy</li>
         <li>Developed independent intern project meant to promote AI-usage safety and policy in a single right-click</li>
-        < 
+         
 <br></br>
     PIVOTAL EXPERIENCE:
         <li>Gained experience designing UX/UI for humans using AI</li>

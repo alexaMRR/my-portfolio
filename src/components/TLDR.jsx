@@ -63,6 +63,50 @@ function TLDR() {
                 </div></div>
 </div>
 
+<div className = "flashcardBlue"> 
+<div className="flashcard-left-column"> 
+  <img src= "/assets/logos/autorabit-logo.jpg" alt="autorabit Cover" className="flashcard-logo"/>
+    <div className= "flashcard-skills"> 
+      <div className="flashcard-skill">UX/UI Design</div>
+      <div className="flashcard-skill">Human-Computer-AI Interaction</div>
+      <div className="flashcard-skill">Python</div>
+      <div className="flashcard-skill">Figma</div>
+      <div className="flashcard-skill">Claude Code</div>
+    </div>
+</div>
+
+
+<div className="flashcard-right-column-top"> <div class="title-block">
+  <div className="flashcard-title">
+    AI Enablement Intern @ AutoRABIT
+  </div>
+  <div className="flashcard-subtitle"> 
+    CODAA (CoE On-Demand AI Advising): Browser extentstion meant to promote safe and intentional AI usage as part of DevSecOps 
+  </div>
+ 
+</div> 
+ <p> INNOVATION IN AI:
+        <li>Participated in pivotal AI Governance meetings shaping forefront of AI policy</li>
+        <li>Developed independent intern project meant to promote AI-usage safety and policy in a single right-click</li>
+        < 
+<br></br>
+    PIVOTAL EXPERIENCE:
+        <li>Gained experience designing UX/UI for humans using AI</li>
+        <li>Learned about developments in the LLM space directly from state-of-the-art mentors</li>
+  </p>
+  <div className="action-bar-flat">
+                <a href="https://www.autorabit.com/" target="_blank"className="action-btn-flat-accent"> <b>Visit AutoRABIT</b></a>
+            </div>
+  <div className="gallery">
+ <div className="gallery-item">
+     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
+    <img src="/assets/comingSoon.png" alt="description" /> </a>
+  </div>
+</div>
+</div>
+</div>
+------------------------------------------
+      
             <div className = "flashcardRed"> 
 <div className="flashcard-left-column"> 
   <figure>

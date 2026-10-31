@@ -33,32 +33,29 @@ export default function HomePage() {
     return (
         <div className="home-page">
             <Navbar navigate={navigate} activePage="home" />
-            <div className="home-body">
 
-                {/* ── Left Sidebar ── */}
-                <aside className="sidebar">
-                    {SIDEBAR_SECTIONS.map((section) => (
-                        <button
-                            key={section}
-                            className={`sidebar-link ${activeSection === section ? "active" : ""}`}
-                            onClick={() => setActiveSection(section)}
-                        >
-                            {section}
-                        </button>
-                    ))}
-                </aside>
-
-                {/* ── Main Content ── */}
-                <main className="home-content">
-                    {activeSection === "Hello World!" && <SectionHelloWorld />}
-                    {activeSection === "Meet Alexa" && <SectionMeetAlexa />}
-                    {activeSection === "Education + Certificates" && <SectionEducation />}
-                    {activeSection === "Skills + Tools" && <SectionSkills />}
-                    {activeSection === "Achievements + Awards" && <SectionAchievements />}
-                    {activeSection === "Contact Me" && <SectionContact />}
-                </main>
-
+            {/* ── Horizontal Tab Row ── */}
+            <div className="tab-bar">
+                {SIDEBAR_SECTIONS.map((section) => (
+                    <button
+                        key={section}
+                        className={`tab-btn ${activeSection === section ? "active" : ""}`}
+                        onClick={() => setActiveSection(section)}
+                    >
+                        {section}
+                    </button>
+                ))}
             </div>
+
+            {/* ── Content ── */}
+            <main className="tab-content">
+                {activeSection === "Hello World!" && <SectionHelloWorld />}
+                {activeSection === "Meet Alexa" && <SectionMeetAlexa />}
+                {activeSection === "Education + Certificates" && <SectionEducation />}
+                {activeSection === "Skills + Tools" && <SectionSkills />}
+                {activeSection === "Achievements + Awards" && <SectionAchievements />}
+                {activeSection === "Contact Me" && <SectionContact />}
+            </main>
         </div>
     );
 }

@@ -1,10 +1,34 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar.jsx";     
+import Navbar from "./Navbar.jsx";
 
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();     
+
+const bonbonQ = "https://www.google.com/search?q=who+illustrated+bonbon+and+the+united+women+uc+berkeley&num=10&sca_esv=f4adb27807e92ea2&biw=1422&bih=621&sxsrf=ANbL-n7QWx2YLVddggc2vNe0nKOk_-P3Bw%3A1775989054354&ei=PnHbaYWmFare0PEP4qym4A4&ved=0ahUKEwiFvdbliuiTAxUqLzQIHWKWCewQ4dUDCBE&uact=5&oq=who+illustrated+bonbon+and+the+united+women+uc+berkeley&gs_lp=Egxnd3Mtd2l6LXNlcnAiN3dobyBpbGx1c3RyYXRlZCBib25ib24gYW5kIHRoZSB1bml0ZWQgd29tZW4gdWMgYmVya2VsZXkyBBAjGCdI4iRQjARYhCNwBHgAkAEAmAF6oAGlCqoBBDEzLjK4AQPIAQD4AQGYAg6gAuYIwgIHECMYsAMYJ8ICCBAAGO8FGLADmAMAiAYBkAYFkgcEMTEuM6AHnhqyBwM5LjO4B9oIwgcGMC4xMC40yAcngAgB&sclient=gws-wiz-serp";
 const SIDEBAR_SECTIONS = [
   "TLDR"
 ];
+function ProcessDropdown({ children }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="process-section">
+      <button
+        className={`process-toggle ${open ? "open" : ""}`}
+        onClick={() => setOpen(!open)}
+      >
+        <span className="process-toggle-label">▶ PROCESS</span>
+        <span className="process-toggle-hint">{open ? "collapse" : "see my thought process"}</span>
+      </button>
+      {open && <div className="process-body">{children}</div>}
+    </div>
+  );
+}
 
 // ── Top navbar links ──────────────────────────
 
@@ -33,6 +57,7 @@ function TLDR() {
   return (
     <section className="content-section">
       <h2 className="section-heading">TL;DR</h2>
+      <div class="section-subheading"> Got a minute?</div>
 <div className = "flashcardGradient"> 
 <div className="flashcard-left-column"> 
   <img src="/assets/myGallery/alexaTLDR.jpg" alt="alexa" className="flashcard-logo" />
@@ -50,7 +75,10 @@ function TLDR() {
   <br></br><br></br>I speak the languages of both sides in human-computer interaction. I compose ideas, perfect designs, code the components, and ship the final product– I can do it all. 
                 <br></br>
                 <br></br>
-                I approach my work like it's art-- I have a passion for breathing life into digital experiences. 
+                I approach my work like it's art. I wield my creativity and lean into the process.
+                <br></br>
+                If I can think it, I don't need much more than a pencil and paper. 
+                <br></br>
                 <br></br>I've got experience with <b>Python, React.js, HTML/CSS, SQL, Adobe Suite, Figma, and Copilot </b>.
                 <br></br>
                 <br></br>
@@ -60,12 +88,24 @@ function TLDR() {
                 <div className="content-signoff">
                     <span>Cheers,<br /><em>ALEXA</em></span>
                     <img src="/assets/signaturePlaceholder.png" alt="signature" />
-                </div></div>
+                </div>
+                </div>
+                
 </div>
 
+<div className="action-bar-flat">
+                <a href="mailto:alexarodriguez1273@gmail.com"  className="action-btn-flat" title="Digital Download"> <b>ALEXARODRIGUEZ1273</b>@gmail.com </a>
+                <a href="mailto:alexamrr@berkeley.edu"  className="action-btn-flat"> <b>ALEXAMRR</b>@berkeley.edu</a>
+                <a href="/assets/ALEXA-RODRIGUEZ-RESUME.pdf" target="_blank" rel="noreferrer"  className="action-btn-flat"title="View Resume"> VIEW MY <b>RESUME</b></a>
+                <a href={bonbonQ} className="action-btn-flat"> <b> HEY GOOGLE, </b>WHO ILLUSTRATED "BONBON" AND THE UNITED WOMEN AT UC BERKELEY?</a>
+             
+            </div>
+            
 <div className = "flashcardBlue"> 
 <div className="flashcard-left-column"> 
+  <div className = "flashcard-category-work"> WORK EXPERIENCE</div>
   <img src= "/assets/logos/autorabit-logo.jpg" alt="autorabit Cover" className="flashcard-logo"/>
+    <figcaption>Courtesy of AutoRABIT </figcaption>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">UX/UI Design</div>
       <div className="flashcard-skill">Human-Computer-AI Interaction</div>
@@ -77,11 +117,12 @@ function TLDR() {
 
 
 <div className="flashcard-right-column-top"> <div class="title-block">
+  
   <div className="flashcard-title">
     AI Enablement Intern @ AutoRABIT
   </div>
   <div className="flashcard-subtitle"> 
-    CODAA (CoE On-Demand AI Advising): Browser extentstion meant to promote safe and intentional AI usage as part of DevSecOps 
+   Remote | San Francisco, CA | Summer 2026 
   </div>
  
 </div> 
@@ -105,10 +146,11 @@ function TLDR() {
 </div>
 </div>
 </div>
-------------------------------------------
       
-            <div className = "flashcardRed"> 
+            <div className = "flashcardRed">
+       
 <div className="flashcard-left-column"> 
+  <div className = "flashcard-category-work"> WORK EXPERIENCE</div>
   <figure>
   <img src= "/assets/logos/Hortus-Logo.png" alt="hortus logo" className="flashcard-logo"/>
     <figcaption>Courtesy of Hortus AI </figcaption>
@@ -128,6 +170,7 @@ function TLDR() {
 
 </div>
 <div className="flashcard-right-column-top"> <div class="title-block">
+  
   <div className="flashcard-title">
     UX/UI Intern @ Hortus AI
   </div>
@@ -165,8 +208,14 @@ function TLDR() {
 
 
 </div>
+
+{/*<ProcessDropdown>
+  <p>My thought process here...</p>
+</ProcessDropdown> */}
 <div className = "flashcardBlue"> 
+  
 <div className="flashcard-left-column"> 
+  <div className = "flashcard-category-project"> PROJECT EXPERIENCE</div>
   <img src= "/assets/bonbon/bonbonCOVER.jpg" alt="Bonbon Cover" className="flashcard-logo"/>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">Product Design</div>
@@ -239,7 +288,8 @@ function TLDR() {
 
 
 <div className = "flashcardRed"> 
-<div className="flashcard-left-column"> 
+<div className="flashcard-left-column">
+   <div className = "flashcard-category-project"> PROJECT EXPERIENCE</div> 
   <img src= "/assets/eps88-solar-cycle/num_sunspots-over-time.png" alt="Graph: Number of Sunspots Over Time" className="flashcard-logo"/>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">Data Analysis</div>
@@ -289,7 +339,8 @@ function TLDR() {
 
 </div>
 <div className = "flashcardBlue"> 
-<div className="flashcard-left-column"> 
+<div className="flashcard-left-column">
+   <div className = "flashcard-category-project"> PROJECT EXPERIENCE</div> 
   <img src= "/assets/xolanthias/Box-Front.png" alt="Xolanthias Game" className="flashcard-logo"/>
     <div className= "flashcard-skills"> 
       <div className="flashcard-skill">Illustrator</div>
@@ -352,6 +403,7 @@ function TLDR() {
 </div></div>
 <div className = "flashcardRed"> 
 <div className="flashcard-left-column"> 
+   <div className = "flashcard-category-project"> PROJECT EXPERIENCE</div>
   <figure>
     <img src= "/assets/c88/ants-vs-somebees.png" alt="Ants Vs. Somebees Splash" className="flashcard-logo"/>
   <figcaption>Courtesy of CS61a Project Site</figcaption>

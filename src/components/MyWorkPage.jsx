@@ -1,526 +1,469 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar.jsx";     
+import Navbar from "./Navbar.jsx";
 
-const SIDEBAR_SECTIONS = [
-  "Overview",
-  "Work Experience",
-  "Academic Projects",
+
+const TABS = ["Work Experience", "Academic Projects"];
+
+const XP_PROJECTS = [
+  "Hortus AI",
+  "Bonbon! And the United Women",
+  "Xolanthia's Game",
+  "Freelance Work",
+];
+
+const ACADEMIC_PROJECTS = [
+  "Solar Cycles Analysis",
+  "Ants Vs. SomeBees",
+  "Hayward Fault Report",
+  "Indigenous Data Sovereignty",
 ];
 
 export default function MyWorkPage() {
-  const [activeSection, setActiveSection] = useState(SIDEBAR_SECTIONS[0]);
-  const [activeLink, setActiveLink] = useState("my-work");
+  const [activeTab, setActiveTab] = useState(TABS[0]);
+  const [activeXP, setActiveXP] = useState(XP_PROJECTS[0]);
+  const [activeAcademic, setActiveAcademic] = useState(ACADEMIC_PROJECTS[0]);
   const navigate = useNavigate();
-  
+
   return (
     <div className="home-page">
-        <Navbar navigate={navigate} activePage="my-work" />
-      <div className="home-body">
+      
+      <Navbar navigate={navigate} activePage="my-work" />
+<section className="top-section">
+      
+      <div className="content-section">
+        <h2 className="section-heading">Overview</h2>
+          Welcome to My Work!<br /><br />
+          Here you will find all information regarding professional and relevant projects I've worked on.
+          I've included links to relevant files and sources, along with some picture reels for your viewing pleasure.
+          Don't hesitate to reach out about any questions or feedback — I appreciate it!
+      
+      </div>
+    </section>
+      {/* ── Horizontal Tab Row ── */}
+      <div className="tab-bar">
+        {TABS.map((tab) => (
+          <button
+            key={tab}
+            className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
 
-        {/* ── Left Sidebar ── */}
-        <aside className="sidebar">
-          {SIDEBAR_SECTIONS.map((section) => (
+      {/* ── Content ── */}
+      <div className="tab-content">
+
+        {activeTab === "Work Experience" && (
+          <div className="project-layout">
+            <aside className="project-sidebar">
+              {XP_PROJECTS.map((p) => (
+                <button
+                  key={p}
+                  className={`project-sidebar-btn ${activeXP === p ? "active" : ""}`}
+                  onClick={() => setActiveXP(p)}
+                >
+                  {p}
+                </button>
+              ))}
+            </aside>
+            <main className="project-main">
+              {activeXP === "Hortus AI"                    && <ProjectHortus />}
+              {activeXP === "Bonbon! And the United Women" && <ProjectBonbon />}
+              {activeXP === "Xolanthia's Game"             && <ProjectXolanthia />}
+              {activeXP === "Freelance Work"               && <ProjectFreelance />}
+            </main>
+          </div>
+        )}
+
+        {activeTab === "Academic Projects" && (
+          <div className="project-layout">
+            <aside className="project-sidebar">
+              {ACADEMIC_PROJECTS.map((p) => (
+                <button
+                  key={p}
+                  className={`project-sidebar-btn ${activeAcademic === p ? "active" : ""}`}
+                  onClick={() => setActiveAcademic(p)}
+                >
+                  {p}
+                </button>
+              ))}
+            </aside>
+            <main className="project-main">
+              {activeAcademic === "Solar Cycles Analysis"      && <ProjectSolar />}
+              {activeAcademic === "Ants Vs. SomeBees"          && <ProjectAnts />}
+              {activeAcademic === "Hayward Fault Report"        && <ProjectHayward />}
+              {activeAcademic === "Indigenous Data Sovereignty" && <ProjectIndigenous />}
+            </main>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════
+   REUSABLE PROJECT CARD
+   Shows: heading · subheading · description · [Process toggle] · role/toolkit/highlights · action bar · gallery
+══════════════════════════════════════════════ */
+function ProjectCard({ title, subtitle, description, process, role, toolkit, highlights, actions, gallery }) {
+  const [showProcess, setShowProcess] = useState(false);
+
+  return (
+    <div className="content-container">
+      <h4 className="content-heading">{title}</h4>
+      <p className="content-subheading">{subtitle}</p>
+
+      <div className="content-body">
+        <div className="content-summary">
+          <p><span className="darkblue">Description: </span>{description}</p>
+        </div>
+
+        {/* ── Process Toggle (green section from sketch) ── */}
+        {process && (
+          <div className="process-section">
             <button
-              key={section}
-              className={`sidebar-link ${activeSection === section ? "active" : ""}`}
-              onClick={() => setActiveSection(section)}
+              className={`process-toggle ${showProcess ? "open" : ""}`}
+              onClick={() => setShowProcess(!showProcess)}
             >
-              {section}
+              <span className="process-toggle-label">▶ PROCESS</span>
+              <span className="process-toggle-hint">{showProcess ? "collapse" : "see my thought process"}</span>
             </button>
+            {showProcess && (
+              <div className="process-body">
+                {process}
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className="content-detail-Container">
+          <div className="content-detail">
+            <h3>My Role:</h3>
+            {role.map((r, i) => <li key={i}>{r}</li>)}
+          </div>
+          <div className="content-detail">
+            <h3>Toolkit:</h3>
+            {toolkit.map((t, i) => <li key={i}>{t}</li>)}
+          </div>
+          <div className="content-detail-highlights">
+            <h3>Highlights:</h3>
+            {highlights.map((h, i) => <li key={i}>{h}</li>)}
+          </div>
+        </div>
+      </div>
+
+      {actions && (
+        <div className="action-bar-flat">
+          {actions.map((a, i) => (
+            <a key={i} href={a.href} target="_blank" rel="noreferrer"
+               className={a.accent ? "action-btn-flat-accent" : "action-btn-flat"}
+               download={a.download || undefined}>
+              {a.label}
+            </a>
           ))}
-        </aside>
+        </div>
+      )}
 
-        {/* ── Main Content ── */}
-        <main className="home-content">
-            {activeSection === "Overview" && <SectionOverview />}
-            {activeSection === "Work Experience" && <SectionXP />}
-            {activeSection === "Academic Projects" && <SectionAcademicProjects />}
-        </main>
-
-      </div>
+      {gallery && gallery.length > 0 && (
+        <div className="gallery">
+          {gallery.map((g, i) => (
+            <div className="gallery-item" key={i}>
+              <a href={g.src} target="_blank" rel="noreferrer">
+                <img src={g.src} alt={g.caption} />
+              </a>
+              <p className="gallery-caption">{g.caption}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
 
 
-function SectionOverview() {
+ /*  WORK EXPERIENCE — individual project pages
+ */
+function ProjectHortus() {
   return (
     <section className="content-section">
-      <h2 className="section-heading">Overview</h2>
-      <div className = "content-container">
-      <p className="intro-card">
-          <p> Welcome to My Work!
-            <br></br>
-            Here you will find all information regarding professional and relevant projects I've worked on in the past.
-            <br></br> I’ve included links to relevant files and sources, along with some picture reels for your viewing pleasure. Don’t hesitate to reach out about any questions or feedback, I appreciate it!
- </p>
-        </p>
-        </div>
+      <ProjectCard
+        title="UX/UI Intern @ Hortus AI"
+        subtitle="Hybrid | Oakland, CA | Jan. 2026 - May. 2026"
+        description="This internship was a fantastic opportunity to gain hands-on experience in the UX/UI design process, and to contribute to the development of an innovative AI product. I collaborated closely with the product team to create user-centered designs that enhanced the overall user experience. My responsibilities included conducting user research, creating wireframes and prototypes, and iterating on designs based on user feedback."
+        process={
+          <div>
+            <p>My design process at Hortus followed a double-diamond approach: <strong>Discover → Define → Develop → Deliver.</strong></p>
+            <ul style={{marginTop:'0.5rem', paddingLeft:'1.2rem'}}>
+              <li><strong>Discover:</strong> Stakeholder interviews, competitive analysis of existing AgriTech platforms, user research with farmers and vendors.</li>
+              <li><strong>Define:</strong> Synthesized findings into personas and pain-point matrices; identified that onboarding friction was the #1 drop-off point.</li>
+              <li><strong>Develop:</strong> Low-fi wireframes in Figma → iterated with 3 rounds of internal feedback. Introduced the 'leaf' motif as a cohesive visual language.</li>
+              <li><strong>Deliver:</strong> Handed off annotated Figma specs to engineering; implemented dark mode directly in React/CSS.</li>
+            </ul>
+            <div className="gallery" style={{marginTop:'1rem'}}>
+              <div className="gallery-item">
+                <a href="/assets/hortus/hortus-old-landing.png" target="_blank" rel="noreferrer">
+                  <img src="/assets/hortus/hortus-old-landing.png" alt="Old landing page" />
+                </a>
+                <p className="gallery-caption">Before: old Hortus landing page</p>
+              </div>
+              <div className="gallery-item">
+                <a href="/assets/hortus/hortus-landing-1.0.png" target="_blank" rel="noreferrer">
+                  <img src="/assets/hortus/hortus-landing-1.0.png" alt="Redesigned landing" />
+                </a>
+                <p className="gallery-caption">After: redesigned v1.0</p>
+              </div>
+              <div className="gallery-item">
+                <a href="/assets/hortus/hortus-vendor-newsletter.png" target="_blank" rel="noreferrer">
+                  <img src="/assets/hortus/hortus-vendor-newsletter.png" alt="Vendor newsletter" />
+                </a>
+                <p className="gallery-caption">Vendor newsletter design</p>
+              </div>
+            </div>
+          </div>
+        }
+        role={["User Experience and User Interface", "Front-end Development", "Product Design", "User Researcher"]}
+        toolkit={["Python", "React.js", "Figma", "Jira", "Github Workflows", "Scrum Method"]}
+        highlights={[
+          "Introduced 'leaf' formatting motif adopted across entire product",
+          "Created custom 'Tree of Life' + mandala design using SVG Paths",
+          "Led dark mode development",
+        ]}
+        actions={[
+          { href: "https://trellis.hortus.ai/", label: <><b>Visit</b> Hortus Trellis AI</> },
+          { href: "https://www.newamerica.org/insights/a-sustainable-path-for-ai-development/", label: <><b>NEW AMERICA:</b> A Sustainable Path for AI Development</>, accent: true },
+        ]}
+        gallery={[
+          { src: "/assets/hortus/hortus-landing-1.0.png", caption: "Hortus AI Landing Page v1.0 | Redesigned the landing page with Tree of Life imagery." },
+          { src: "/assets/comingSoon.png", caption: "Coming Soon!" },
+        ]}
+      />
+
     </section>
   );
 }
 
-function SectionXP() {
+function ProjectBonbon() {
   return (
     <section className="content-section">
-
-<div className = "content-container">
-        <h2 className="section-heading">Work Experience</h2>
-      </div>
-        <hr></hr>
-      <div className = "content-container">
-        <h4 className="content-heading"> UX/UI Intern @ Hortus AI </h4>
-        <p className= "content-subheading"> Hybrid | Oakland, CA | Jan. 2026 - May. 2026</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          This internship was a fantastic opportunity to gain hands-on experience in the UX/UI design process, and to contribute to the development of an innovative AI product. I collaborated closely with the product team to create user-centered designs that enhanced the overall user experience. My responsibilities included conducting user research, creating wireframes and prototypes, and iterating on designs based on user feedback. This role allowed me to apply my design skills in a real-world setting, while also learning about the unique challenges and opportunities that arise when designing for AI-driven products.
-          </p>
-          </div>
-
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li> User Experience and User Interface</li>
-            <li> Front-end Development</li>
-            <li> Product Design</li>
-            <li> User Researcher</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Python</li>
-            <li> React.js</li>
-            <li> Figma </li>
-            <li> Jira </li>
-            <li> Github Workflows </li>
-            <li> Scrum Method </li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Introduced ‘leaf’ formatting motif adopted across entire product</li>
-        <li>Created custom 'Tree of Life' + mandala design and implemented using SVG Paths</li>
-        <li>Led dark mode development</li>
-    </div>
-</div>
-
-<div className="action-bar-flat">
-                <a href="https://trellis.hortus.ai/" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit Hortus Trellis AI "> <b>Visit</b> Hortus Trellis AI </a>
-                <a href="https://www.newamerica.org/insights/a-sustainable-path-for-ai-development/" target="_blank"className="action-btn-flat-accent "> <b>NEW AMERICA:</b> A Sustainable Path for AI Development to Empower Communities and Serve Public Interests</a>
+      <ProjectCard
+        title="Bonbon! And the United Women"
+        subtitle="Children's Book Project for UC Berkeley's Chicano 50 | Fall 2023"
+        description={`During the Fall of 2023, I had the pleasure of taking CHICANO 50 - Introduction to Chicano Studies. Our final project was an effort to combat the banning of books in K-12 education. We collaborated in small groups to produce short stories based on a specific event or female historical figure. Our project was based on the women mutualistas of the 1930s– networks of women in Mexican-American barrios that created an underlying safety net for their communities during the Great Depression.`}
+        process={
+          <div>
+            <p>This was a <strong>72-hour sprint</strong> from concept to printed copy. Here's how I approached it:</p>
+            <ul style={{marginTop:'0.5rem', paddingLeft:'1.2rem'}}>
+              <li><strong>Research:</strong> Dove into primary sources on Mexican mutualistas and the Repatriation Act to make the story historically grounded.</li>
+              <li><strong>Storyboarding:</strong> Pencil thumbnails for all 33 pages before touching Procreate — mapped pacing, spread layouts, and key emotional beats.</li>
+              <li><strong>Character Design:</strong> Sketched Bonbon through multiple iterations until the chihuahua's proportions worked at both small (spot illo) and large (full-spread) scales.</li>
+              <li><strong>Production:</strong> Illustrated in Procreate, laid out in Adobe InDesign with bilingual (EN/ES) text. Managed print bleed and color profiles for Eastwind Books.</li>
+            </ul>
+            <div className="gallery" style={{marginTop:'1rem'}}>
+              <div className="gallery-item">
+                <a href="/assets/bonbon/bonbon-Character-Sketching.png" target="_blank" rel="noreferrer">
+                  <img src="/assets/bonbon/bonbon-Character-Sketching.png" alt="Character sketches" />
+                </a>
+                <p className="gallery-caption">Character design sketches</p>
+              </div>
+              <div className="gallery-item">
+                <a href="/assets/bonbon/bonbon-p1-sketch.png" target="_blank" rel="noreferrer">
+                  <img src="/assets/bonbon/bonbon-p1-sketch.png" alt="Page 1 sketch" />
+                </a>
+                <p className="gallery-caption">Opening page sketch</p>
+              </div>
+              <div className="gallery-item">
+                <a href="/assets/bonbon/two-page-spread-sketch.jpg" target="_blank" rel="noreferrer">
+                  <img src="/assets/bonbon/two-page-spread-sketch.jpg" alt="Spread sketch" />
+                </a>
+                <p className="gallery-caption">Full-spread sketch in production</p>
+              </div>
             </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/hortus/hortus-landing-1.0.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/hortus/hortus-landing-1.0.png" alt="description" /> </a>
-    <p className="gallery-caption">Hortus AI Landing Page v1.0 | Redesigned the landing page, creating a tree of life image with mandala elements to tie into brand identity emphasizing the human-technology ecosystem. </p>
-  </div>
-  
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
-        
-      <div className = "content-container">
-        <h4 className="content-heading">Bonbon! And the United Women</h4>
-        <p className= "content-subheading"> Children's Book Project for UC Berkeley’s Chicano 50: Intro to Chicano Studies | Fall 2023</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          During the Fall of 2025, I had the pleasure of taking CHICANO 50 - Introduction to Chicano Studies. Our final project was an effort to combat the banning of books in K-12 education, a practice that was targeted largely at ethnic studies topics. We collaborated in small groups to produce short stories based on a specific event or female historical figure we had learned about that semester. Our project was based on the women mutualistas of the 1930s– networks of women in Mexican-American barrios that created an underlying safety net for their communities during the Great Depression.
-          </p>
           </div>
+        }
+        role={["Lead Illustrator and Designer", "Storyboarding", "Product Branding", "Wireframing and Prototyping"]}
+        toolkit={["Adobe Illustrator", "Adobe InDesign", "Procreate"]}
+        highlights={[
+          "33 Pages with over 20 illustrations",
+          "Bilingual (Spanish/English)",
+          '"Best Illustration" and "Best Overall" in cohort',
+          "Locally published with Eastwind Books of Berkeley",
+          "Sub-72 hour turnaround",
+        ]}
+        actions={[
+          { href: "/assets/bonbon/bonbonBookFINAL.pdf", label: <><b>Download</b> "Bonbon! And the United Women"</>, download: true },
+          { href: "/assets/bonbon/bonbonBookFINAL.pdf", label: <><b>Open</b> PDF in your browser</> },
+          { href: "https://www.dailycal.org/news/campus/student-life/uc-berkeley-students-create-children-s-books-on-chicano-history-to-combat-k-12-book/article_5b997488-c3e6-11ee-9048-1f2dc643988e.html", label: <><b>THE DAILY CAL:</b> UC Berkeley students create children's books on Chicano history</>, accent: true },
+          { href: "https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/", label: <><b>UC BERKELEY NEWS:</b> UC Berkeley students combat K-12 book bans</>, accent: true },
+        ]}
+        gallery={[
+          { src: "/assets/bonbon/book-sather-tower.jpg", caption: "Printed copy in front of Sather Tower" },
+          { src: "/assets/bonbon/books-ethnic-studies-lib.jpg", caption: "Two copies in the UC Berkeley Ethnic Studies Library" },
+          { src: "/assets/bonbon/luigi-pages-photograph.jpg", caption: "Book expo setup + Luigi (my muse!)" },
+          { src: "/assets/bonbon/full-spread-illustration-photograph.jpg", caption: "Full-spread illustration in physical copy" },
+        ]}
+      />
 
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li> Lead Illustrator and Designer</li>
-            <li> Storyboarding</li>
-            <li> Product Branding</li>
-            <li> Wireframing and Prototyping</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Adobe Illustrator</li>
-            <li> Adobe InDesign</li>
-            <li> Procreate</li>
-
-    </div>
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>33 Pages with over 20 illustrations</li>
-        <li>Bilingual (Spanish/English)</li>
-        <li>“Best Illustration” and “Best Overall” in cohort</li>
-        <li>Locally published with Eastwind Books of Berkeley</li>
-        <li>Sub-72 hour turnaround</li>
-    </div>
-</div>
-
-<div className="action-bar-flat">
-                <a href="/assets/bonbonBookFinal.pdf" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Digital Download"> <b>Download</b> "Bonbon! And the United Women" </a>
-                <a href="/assets/bonbonBookFinal.pdf" target="_blank" className="action-btn-flat"> <b>Open</b> PDF in your browser</a>
-                <a href="https://www.dailycal.org/news/campus/student-life/uc-berkeley-students-create-children-s-books-on-chicano-history-to-combat-k-12-book/article_5b997488-c3e6-11ee-9048-1f2dc643988e.html" target="_blank" className="action-btn-flat-accent"> <b> THE DAILY CALIFORNIAN: </b> UC Berkeley students create children’s books on Chicano history to combat K-12 book bans</a>
-                <a href="https://news.berkeley.edu/2024/01/29/uc-berkeley-students-combat-k-12-book-bans-by-creating-their-own-childrens-books/" target="_blank"className="action-btn-flat-accent "> <b>UC BERKELEY NEWS:</b> UC Berkeley students combat K-12 book bans by creating their own children’s books</a>
-            </div>
-<div className="content-summary">
-    <p> <div className="darkblue">Synopsis:</div> 
-<i>”Bonbon! And the United Women”</i> follows a chihuahua dog named Bonbon as he witnesses the effects of the 1930s Great Depression in his neighborhood. At this time, the Mexican-American community was being targeted through the Mexican Repatriation Act (1929 - 1936). This act would call for the deportation of Mexican and Mexican-Americans to Mexico. It tore apart families, expulsed American-born Mexicans, and drastically changed the lives of over a million people. Bonbon walks through his barrio, and witnesses Mexican women build support systems, aid each other’s families, work for an income, and fight for the survival of the Mexican-American community. 
-</p></div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/bonbon/book-sather-tower.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/book-sather-tower.jpg" alt="description" /> </a>
-    <p className="gallery-caption">Printed copy in front of Sather Tower</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/bonbon/books-ethnic-studies-lib.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/books-ethnic-studies-lib.jpg" ttarget="_blank" rel="noreferrer"alt="description" /> </a>
-    <p className="gallery-caption">Two physical copies in the UC Berkeley Ethnic Studies Library</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/bonbon/luigi-pages-photograph.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/luigi-pages-photograph.jpg" target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Book expo setup along with a picture of Luigi (my muse!)</p> 
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/bonbon/bonbon-Character-Sketching.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/bonbon-Character-Sketching.png" target="_blank" rel="noreferrer" alt="description" /> </a>
-    <p className="gallery-caption">Brainstorming character design and artstyle</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/bonbon/bonbon-p1-sketch.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/bonbon-p1-sketch.png" target="_blank" rel="noreferrer" alt="description" /> </a>
-    <p className="gallery-caption">Opening page sketch </p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/bonbon/full-spread-illustration-photograph.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/full-spread-illustration-photograph.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Full-spread illustration across two pages in physical copy</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/bonbon/two-page-spread-sketch.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/bonbon/two-page-spread-sketch.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Full-spread illustration sketch in production</p>
-  </div>
-</div>
-</div>
-</div>
-        <div className = "content-container">
-        <h4 className="content-heading"> Xolanthia's Game</h4>
-        <p className= "content-subheading"> BUILD Entrepreneurship Program | Oakland, CA | Aug. 2018 - May 2019</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          In 2018, my high school offered BUILD as an elective for 9th graders. It focused on helping us develop a ‘CEO-of-your-own-life’ mindset, going through the entire process of developing, manufacturing, and selling our very own products through our very own companies. <br>
-          </br>My team and I developed a fantasy card game aimed at the middle-ground between UNO and Magic! The Gathering– vibrant designs, fantastical world-building, medium-length games, and lower barrier of entry. My passion to lead and create led me to taking this opportunity to the max, and to this day it’s one of my favorite projects ever. I loved developing our brand, using galaxy backgrounds and orange crystal motifs to tie into the fantasy sci-fi world we created. I facilitated the box material manufacturing, and was in charge of developing not only our product, but our brand image ‘Ember Wolf Studios’. I sincerely hope I can revisit the project soon, as my passion didn’t end when our time with the program did.
-          </p>
-          </div>
-
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Chief Executive Officer</li>
-            <li>Head of Design</li>
-            <li>Head of Operations</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li>Adobe Illustrator</li>
-            <li>User Research </li>
-            <li>Multimedia Assets (Digital, Print, Social Media)</li>
-            <li> Medibang Paint </li>
-
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Placed first at BUILD regional product pitch competition</li>
-        <li>Over 20 units sold</li>
-        <li>Over 40 custom card illustrations and designs </li>
-        <li>Box set includes a dice, instructions, and playing chips</li>
-        <li>Made for 2 - 5 players</li>
-    </div>
-</div>
-
-<div className="action-bar-flat">
-                <a href="https://build.org/" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit BUILD.org"> <b>Visit</b> BUILD.org</a>
-                <a href="link" target="_blank"className="action-btn-flat-accent "> <b>Get your own Xolanthia's Game set: </b>Click here to order</a>
-            </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/xolanthias/Box-Front.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/xolanthias/Box-Front.png" alt="description" /> </a>
-    <p className="gallery-caption">Front of the Xolanthia's Game box - Final Version</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/xolanthias/XG-display.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/xolanthias/XG-display.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game display at the BUILD Regional open floor.</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/xolanthias/XG-product-evolution.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/xolanthias/XG-product-evolution.png"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game product evolution.</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/xolanthias/XG-rules1.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/xolanthias/XG-rules1.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game rules (Page 1)</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/xolanthias/XG-rules2.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/xolanthias/XG-rules2.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game rules (Page 2)</p>
-  </div>
-  <div className="gallery-item">
-    <a href="/assets/xolanthias/cards-laid-out.jpg"  target="_blank" rel="noreferrer">
-    <img src="/assets/xolanthias/cards-laid-out.jpg"target="_blank" rel="noreferrer" alt="description" /></a>
-    <p className="gallery-caption">Xolanthia's Game cards in production for first sales event.</p>
-  </div>
-</div>
-        </div>
-        </div>
-        <div className = "content-container">
-        <h4 className="content-heading"> Freelance Work</h4>
-        <p className= "content-subheading">  Independent Contractor | Bay Area, CA </p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          - Deaf Women's Basketball Jersey Design 
-          - Aspire GSP Uniform Design
-          </p>
-          </div>
-
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Coming Soon...</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Coming Soon...</li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Coming Soon...</li>
-    </div>
-</div>
-
-<div className="action-bar-flat">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn-flat" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-flat-accent "> <b>In the news</b>...</a>
-            </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
     </section>
   );
 }
 
-
-function SectionAcademicProjects() {
+function ProjectXolanthia() {
   return (
     <section className="content-section">
-      <div className = "content-container">
-        <h2 className="section-heading">Academic Projects</h2>
-        <div className="content-body">
-          <p> This section is still under construction-- please excuse the rough edges! </p>
-        </div>
-      </div>
-
-        <div className = "content-container">
-        <h4 className="content-heading"> Analysis of Solar Cycles and Space Weather: NOAA and GFZ Potsdam </h4>
-        <p className= "content-subheading">  EPS 88: Data Science for Earth Sciences | Berkeley, CA | Fall 2024</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          Coming soon! Check back in a day or two, or reach out!
-          </p>
-          </div>
-
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Coming Soon...</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Coming Soon...</li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Coming Soon...</li>
-    </div>
-</div>
-
-<div className="action-bar">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-accent "> <b>In the news</b>...</a>
+      <ProjectCard
+        title="Xolanthia's Game"
+        subtitle="BUILD Entrepreneurship Program | Oakland, CA | Aug. 2018 - May 2019"
+        description="In 2018, my high school offered BUILD as an elective for 9th graders. It focused on helping us develop a 'CEO-of-your-own-life' mindset, going through the entire process of developing, manufacturing, and selling our very own products through our very own companies. My team and I developed a fantasy card game aimed at the middle-ground between UNO and Magic: The Gathering– vibrant designs, fantastical world-building, medium-length games, and lower barrier of entry."
+        process={
+          <div>
+            <p>Xolanthia's Game was a full product lifecycle from <strong>idea → pitch → manufacturing → sales</strong>.</p>
+            <ul style={{marginTop:'0.5rem', paddingLeft:'1.2rem'}}>
+              <li><strong>Concept:</strong> Market research on existing card games to find the gap between casual (UNO) and complex (MTG). Defined our target: 2-5 players, 30-45 min sessions.</li>
+              <li><strong>Brand Identity:</strong> Settled on a galaxy + orange crystal motif to evoke 'fantasy sci-fi'. Created the 'Ember Wolf Studios' brand and logo.</li>
+              <li><strong>Card Design:</strong> 40+ card illustrations in Medibang Paint and Adobe Illustrator. Built a consistent visual system across characters, items, and event cards.</li>
+              <li><strong>Manufacturing:</strong> Sourced card stock and box materials. Managed vendor communication and production timeline to hit the regional pitch deadline.</li>
+              <li><strong>Sales & Pitch:</strong> Presented to judges at BUILD Regional — placed 1st. Sold 20+ units at open floor event.</li>
+            </ul>
+            <div className="gallery" style={{marginTop:'1rem'}}>
+              <div className="gallery-item">
+                <a href="/assets/xolanthias/circa-sketch.jpg" target="_blank" rel="noreferrer">
+                  <img src="/assets/xolanthias/circa-sketch.jpg" alt="Sketch" />
+                </a>
+                <p className="gallery-caption">Early concept sketches</p>
+              </div>
+              <div className="gallery-item">
+                <a href="/assets/xolanthias/XG-product-evolution.png" target="_blank" rel="noreferrer">
+                  <img src="/assets/xolanthias/XG-product-evolution.png" alt="Product evolution" />
+                </a>
+                <p className="gallery-caption">Product evolution</p>
+              </div>
+              <div className="gallery-item">
+                <a href="/assets/xolanthias/card-manufacturing.jpg" target="_blank" rel="noreferrer">
+                  <img src="/assets/xolanthias/card-manufacturing.jpg" alt="Manufacturing" />
+                </a>
+                <p className="gallery-caption">Cards in production</p>
+              </div>
             </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
-        <div className = "content-container">
-        <h4 className="content-heading"> Ants Vs. SomeBees: Tower-Defense Simulation</h4>
-        <p className= "content-subheading">  CS61A: Structure & Interpretation of Computer Programs | Berkeley, CA | Fall 2025</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          Coming soon! Check back in a day or two, or reach out!
-          </p>
           </div>
+        }
+        role={["Chief Executive Officer", "Head of Design", "Head of Operations"]}
+        toolkit={["Adobe Illustrator", "User Research", "Multimedia Assets (Digital, Print, Social Media)", "Medibang Paint"]}
+        highlights={[
+          "Placed first at BUILD regional product pitch competition",
+          "Over 20 units sold",
+          "Over 40 custom card illustrations and designs",
+          "Box set includes dice, instructions, and playing chips",
+          "Made for 2 - 5 players",
+        ]}
+        actions={[
+          { href: "https://build.org/", label: <><b>Visit</b> BUILD.org</> },
+          { href: "#", label: <><b>Get your own Xolanthia's Game set: </b>Click here to order</>, accent: true },
+        ]}
+        gallery={[
+          { src: "/assets/xolanthias/Box-Front.png", caption: "Front of the Xolanthia's Game box - Final Version" },
+          { src: "/assets/xolanthias/XG-display.jpg", caption: "Display at the BUILD Regional open floor" },
+          { src: "/assets/xolanthias/cards-laid-out.jpg", caption: "Cards in production for first sales event" },
+          { src: "/assets/xolanthias/XG-rules1.jpg", caption: "Rules Page 1" },
+          { src: "/assets/xolanthias/XG-rules2.jpg", caption: "Rules Page 2" },
+        ]}
+      />
 
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Coming Soon...</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Coming Soon...</li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Coming Soon...</li>
-    </div>
-</div>
+    </section>
+  );
+}
 
-<div className="action-bar">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-accent "> <b>In the news</b>...</a>
-            </div>
+function ProjectFreelance() {
+  return (
+    <section className="content-section">
+      <ProjectCard
+        title="Freelance Work"
+        subtitle="Independent Contractor | Bay Area, CA"
+        description="Deaf Women's Basketball Jersey Design · Aspire GSP Uniform Design"
+        role={["Coming Soon..."]}
+        toolkit={["Coming Soon..."]}
+        highlights={["Coming Soon..."]}
+        actions={[
+          { href: "#", label: <><b>Visit</b>...</> },
+        ]}
+        gallery={[
+          { src: "/assets/freelance/cali-panthers-front.jpg", caption: "California Panthers jersey — front" },
+          { src: "/assets/freelance/cali-panthers-back.jpg", caption: "California Panthers jersey — back" },
+          { src: "/assets/freelance/gsp-shirt-portrait.jpg", caption: "Aspire GSP uniform" },
+        ]}
+      />
+    </section>
+  );
+}
 
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
+/* ══════════════════════════════════════════════
+   ACADEMIC PROJECTS — individual project pages
+══════════════════════════════════════════════ */
+function ProjectSolar() {
+  return (
+    <section className="content-section">
+      <ProjectCard
+        title="Analysis of Solar Cycles and Space Weather: NOAA and GFZ Potsdam"
+        subtitle="EPS 88: Data Science for Earth Sciences | Berkeley, CA | Fall 2024"
+        description="Coming soon! Check back in a day or two, or reach out!"
+        role={["Coming Soon..."]}
+        toolkit={["Coming Soon..."]}
+        highlights={["Coming Soon..."]}
+        gallery={[
+          { src: "/assets/eps88-solar-cycle/kp-index-over-time.png", caption: "Kp Index over time" },
+          { src: "/assets/eps88-solar-cycle/num_sunspots-over-time.png", caption: "Sunspot count over time" },
+        ]}
+      />
+    </section>
+  );
+}
 
-        <div className = "content-container">
-        <h4 className="content-heading"> The New Bear: Hayward Fault Report</h4>
-        <p className= "content-subheading">  EPS 20: Earthquakes in your backyard | Berkeley, CA | Fall 2025</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          Coming soon! Check back in a day or two, or reach out!
-          </p>
-          </div>
+function ProjectAnts() {
+  return (
+    <section className="content-section">
+      <ProjectCard
+        title="Ants Vs. SomeBees: Tower-Defense Simulation"
+        subtitle="CS61A: Structure & Interpretation of Computer Programs | Berkeley, CA | Fall 2025"
+        description="Coming soon! Check back in a day or two, or reach out!"
+        role={["Coming Soon..."]}
+        toolkit={["Coming Soon..."]}
+        highlights={["Coming Soon..."]}
+        gallery={[
+          { src: "/assets/c88/ants-vs-somebees.png", caption: "Ants vs. SomeBees" },
+        ]}
+      />
+    </section>
+  );
+}
 
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Coming Soon...</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Coming Soon...</li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Coming Soon...</li>
-    </div>
-</div>
+function ProjectHayward() {
+  return (
+    <section className="content-section">
+      <ProjectCard
+        title="The New Bear: Hayward Fault Report"
+        subtitle="EPS 20: Earthquakes in your backyard | Berkeley, CA | Fall 2025"
+        description="Coming soon! Check back in a day or two, or reach out!"
+        role={["Coming Soon..."]}
+        toolkit={["Coming Soon..."]}
+        highlights={["Coming Soon..."]}
+      />
+    </section>
+  );
+}
 
-<div className="action-bar">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-accent "> <b>In the news</b>...</a>
-            </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
-
-        <div className = "content-container">
-        <h4 className="content-heading"> Indigenous Native American Data Sovereignty Website</h4>
-        <p className= "content-subheading">  NATAMST R1B: Native American Studies Methods and Research | Berkeley, CA | Spring 2024</p>
-        <div className="content-body">
-          <div className="content-summary">
-          <p> 
-          <div className="darkblue"> Description: </div> 
-          Coming soon! Check back in a day or two, or reach out!
-          </p>
-          </div>
-
-        <div className= "content-detail-Container">
-          <div className= "content-detail">
-            <h3>My Role:</h3>
-            <li>Coming Soon...</li>
-          </div>
-    
-    <div className= "content-detail">
-        <h3>Toolkit:</h3>
-            <li> Coming Soon...</li>
-    </div>
-    
-    <div className= "content-detail-highlights">
-        <h3>Highlights:</h3>
-        <li>Coming Soon...</li>
-    </div>
-</div>
-
-<div className="action-bar">
-                <a href="link" download target="_blank" rel="noreferrer" className="action-btn" title="Visit..."> <b>Visit</b>... </a>
-                <a href="link" target="_blank"className="action-btn-accent "> <b>In the news</b>...</a>
-            </div>
-
-<div className="gallery">
-  <div className="gallery-item">
-     <a href="/assets/comingSoon.png"  target="_blank" rel="noreferrer">
-    <img src="/assets/comingSoon.png" alt="description" /> </a>
-    <p className="gallery-caption">Coming Soon!</p>
-  </div>
-</div>
-        </div>
-        </div>
+function ProjectIndigenous() {
+  return (
+    <section className="content-section">
+      <ProjectCard
+        title="Indigenous Native American Data Sovereignty Website"
+        subtitle="NATAMST R1B: Native American Studies Methods and Research | Berkeley, CA | Spring 2024"
+        description="Coming soon! Check back in a day or two, or reach out!"
+        role={["Coming Soon..."]}
+        toolkit={["Coming Soon..."]}
+        highlights={["Coming Soon..."]}
+      />
     </section>
   );
 }
